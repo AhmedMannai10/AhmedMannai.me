@@ -34,15 +34,16 @@ const Header = () => {
 
     return (
         <div
-            className=" bg-secondary
+            className="sticky top-0 z-50 bg-secondary
              dark:bg-dark_secondary 
-            w-screen top-0 flex items-center
+            w-screen  flex items-center
             justify-between
              font-bold font-inter text-lg md:text-2xl
-             md:h-20 h-16 md:px-10 px-4 "
+             md:h-20 h-16 md:px-10 px-4 shadow
+             "
         >
             <Link href="/" className="">
-                <a className="hover:text-dark_primary duration-300 dark:hover:text-white">
+                <a className="hover:text-dark_primary duration-300 dark:hover:text-white ">
                     Ahmed Mannai
                 </a>
             </Link>
