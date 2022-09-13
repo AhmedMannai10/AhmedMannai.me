@@ -12,7 +12,7 @@ export default function ProjectCard({ img, title, desc, tags }) {
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out"
         >
             <div
-                className=" min-h-[300px] 
+                className="
                 relative 
             rounded-t-md "
             >
@@ -20,7 +20,7 @@ export default function ProjectCard({ img, title, desc, tags }) {
                     loading="lazy"
                     src={img}
                     alt={title + "project image"}
-                    layout="fill"
+                    layout="responsive"
                     className="rounded-t-md"
                 />
             </div>
@@ -35,9 +35,9 @@ export default function ProjectCard({ img, title, desc, tags }) {
                 <p className=" text-lg my-2">{desc}</p>
                 <div className="flex mt-2 flex-wrap">
                     {tags &&
-                        tagItems.map((item, index) => {
+                        tagItems.map((item) => {
                             return <TagCard value={item} />;
-                        },)}
+                        })}
                 </div>
             </div>
         </div>

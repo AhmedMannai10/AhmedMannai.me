@@ -1,6 +1,6 @@
 import TagCard from "../components/TagCard";
 
-const about = () => {
+const About = () => {
     return (
         <div
             className="flex flex-col gap-4 bg-secondary dark:bg-dark_secondary mx-4 p-8
@@ -23,10 +23,13 @@ const about = () => {
                 engineering curently I live here in Tunisia. in the last few
                 years I have got into computer science and I fall in love with
                 it and I gain good knowalge about software. I have great
-                knowledge Flutter React <TagCard value="Next JS"/> <TagCard value="Firebase"/> 
+                knowledge Flutter React
             </p>
+            <div>
+                <TagCard value="Next JS" /> <TagCard value="Firebase" />
+            </div>
         </div>
     );
 };
 
-export default about;
+export default About;
