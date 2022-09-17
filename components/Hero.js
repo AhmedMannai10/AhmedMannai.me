@@ -5,10 +5,12 @@ import CtaButton from "./CtaButton";
 
 const Hero = () => {
     return (
-        <div className="flex flex-col gap-6 md:flex-row md:flex justify-center md:mt-10 m-5">
-            <div className="flex-1 flex flex-col gap-6 pt-6 justify-center
+        <div className="flex flex-col gap-6 md:flex-row  justify-center md:mt-10 m-5 ">
+            <div
+                className="flex-1 flex flex-col gap-6 pt-6 justify-center
                 md:gap-10 md:pt-0 
-            ">
+            "
+            >
                 <h1
                     className="
                     font-bold 
@@ -28,10 +30,10 @@ const Hero = () => {
                     </a>
                 </Link>
             </div>
-            <div className="flex-1  ">
+            <div className="flex-1 flex md:justify-center  ">
                 <div
-                    className="border-white border-[6px] rounded-md w-full 
-                max-w-[500px] "
+                    className=" border-white border-[6px] rounded-md w-full 
+                max-w-[500px] h-fit"
                 >
                     <Image
                         src={mypic}

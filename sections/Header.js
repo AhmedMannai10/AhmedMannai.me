@@ -36,7 +36,7 @@ const Header = () => {
         <div
             className="sticky top-0 z-50 bg-secondary
              dark:bg-dark_secondary 
-            w-screen  flex items-center
+            w-full  flex items-center
             justify-between
              font-bold font-inter text-lg md:text-2xl
              md:h-20 h-16 md:px-10 px-4 shadow

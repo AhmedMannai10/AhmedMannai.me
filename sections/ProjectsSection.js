@@ -8,7 +8,6 @@ export default function ProjectsSection() {
     return (
         <div
             className="flex flex-col gap-10
-             mx-8
             items-center 
      "
         >
@@ -29,6 +28,13 @@ export default function ProjectsSection() {
                     title="first Porject"
                     desc={"this is my first project ever"}
                     tags="#ML"
+                    link="/projects"
+                />
+                <ProjectCard
+                    img={img}
+                    title="Machine Learning"
+                    desc={"Raed 3amel jaw"}
+                    tags="#ML #Python #JavaScript #DataScience #Learning"
                 />
                 <ProjectCard
                     img={img}
