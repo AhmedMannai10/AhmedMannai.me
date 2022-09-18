@@ -8,13 +8,12 @@ export default function ProjectsSection() {
     return (
         <div
             className="flex flex-col gap-10
-            items-center 
-     "
+            items-center "
         >
             <h2
                 className="dark:text-dark_h_color 
                     text-h_color font-semibold
-                    text-3xl my-2"
+                    text-3xl my-2 uppercase"
             >
                 Featured Projects
             </h2>
@@ -36,15 +35,9 @@ export default function ProjectsSection() {
                     desc={"Raed 3amel jaw"}
                     tags="#ML #Python #JavaScript #DataScience #Learning"
                 />
-                <ProjectCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    tags="#ML #Python #JavaScript #DataScience #Learning"
-                />
             </div>
             <Link href="/projects">
-                <a className="flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
+                <a>
                     <CtaButton name="See More" />
                 </a>
             </Link>

@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import Hero from "../components/Hero";
 import About from "../sections/About";
 import ProjectsSection from "../sections/ProjectsSection";
-import BlogSection from "../sections/blogSection";
+import BlogSection from "../sections/BlogSection";
 
 export default function Home() {
     const { theme, setTheme } = useTheme();
