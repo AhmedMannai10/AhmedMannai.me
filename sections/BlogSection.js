@@ -34,7 +34,7 @@ export default function BlogSection() {
                     img={img}
                     title="MacBook"
                     desc="I finaly bought a mack book"
-                ></BlogCard>
+                />
             </div>
             <Link href="/projects" className="">
                 <a>
