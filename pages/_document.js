@@ -4,6 +4,11 @@ export default function Document() {
     return (
         <Html>
             <Head>
+
+                <meta
+                    property="og:image"
+                    content="https://ahmedmannai.com/resources/img/ahmedimg1.jpeg"
+                />
                 <link
                     rel="stylesheet"
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -11,11 +16,12 @@ export default function Document() {
                     crossOrigin="anonymous"
                     referrerPolicy="no-referrer"
                 />
+
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossOrigin='true'
+                    crossOrigin="true"
                 />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"

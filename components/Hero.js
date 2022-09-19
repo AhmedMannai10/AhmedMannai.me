@@ -5,7 +5,7 @@ import CtaButton from "./CtaButton";
 
 const Hero = () => {
     return (
-        <div className="flex flex-col gap-6 md:flex-row  justify-center md:mt-10 m-5 ">
+        <div className="flex flex-col gap-6 md:flex-row  justify-center md:mt-10 m-5 md:px-10 ">
             <div
                 className="flex-1 flex flex-col gap-6 pt-6 justify-center
                 md:gap-10 md:pt-0 

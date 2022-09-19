@@ -19,7 +19,7 @@ export default function BlogSection() {
                 Featured Blog Posts
             </h2>
             <div
-                className="flex flex-col  gap-10
+                className="flex flex-col gap-10
                 md:grid md:grid-cols-2 
             "
             >
@@ -36,7 +36,7 @@ export default function BlogSection() {
                     desc="I finaly bought a mack book"
                 />
             </div>
-            <Link href="/projects" className="">
+            <Link href="/blog" className="">
                 <a>
                     <CtaButton name="See More" />
                 </a>

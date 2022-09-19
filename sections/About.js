@@ -3,7 +3,7 @@ import TagCard from "../components/TagCard";
 const About = () => {
     return (
         <div
-            className="flex flex-col gap-4 bg-secondary dark:bg-dark_secondary mx-4 p-8
+            className="flex flex-col gap-4 bg-secondary dark:bg-dark_secondary mx-14 p-8
         rounded-md shadow-lg 
      "
         >

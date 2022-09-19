@@ -5,7 +5,9 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Header />
-            <main className="flex flex-col gap-20 px-4 py-2 md:px-20">{children}</main>
+            <main className="flex flex-col gap-20 px-4 py-2 md:px-10">
+                {children}
+            </main>
             <Footer />
         </div>
     );

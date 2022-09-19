@@ -1,8 +1,24 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import BlogCard from "../../components/BlogCard";
 import img from "../../assests/imgs/mac.jpg";
+import { db } from "../../lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
+
 
 export default function blog() {
+    const [blogPosts, setBlogPosts] = useState([]);
+    const postsCollectionRef = collection(db, "blogPosts");
+
+    useEffect(() => {
+        getBlogPosts();
+    }, []);
+    
+
+    const getBlogPosts = async () => {
+        const posts = await getDocs(postsCollectionRef);
+        setBlogPosts(posts.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
     return (
         <div className="flex flex-col gap-10 items-center">
             <h1
@@ -12,41 +28,20 @@ export default function blog() {
             >
                 Blog Posts
             </h1>
+
             <div className="flex flex-col gap-10 md:grid md:grid-cols-2">
-                <BlogCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    link={"/test"}
-                />
-                <BlogCard
-                    img={img}
-                    title="MacBook"
-                    desc="I finaly bought a mack book"
-                />
-                <BlogCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    link={"/test"}
-                />
-                <BlogCard
-                    img={img}
-                    title="MacBook"
-                    desc="I finaly bought a mack book"
-                />
-                <BlogCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    link={"/test"}
-                />
-                <BlogCard
-                    img={img}
-                    title="MacBook"
-                    desc="I finaly bought a mack book"
-                />
+                {blogPosts.map((post) => {
+                    return (
+                        <BlogCard
+                            img={img}
+                            title={post.title}
+                            desc={post.description}
+                            key={post.id}
+                        />
+                    );
+                })}
             </div>
         </div>
     );
 }
+

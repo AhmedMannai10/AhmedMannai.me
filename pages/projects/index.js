@@ -33,12 +33,7 @@ export default function projects() {
                     tags="#ML"
                     link="/projects"
                 />
-                <ProjectCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    tags="#ML #Python #JavaScript #DataScience #Learning"
-                />
+              
                 <ProjectCard
                     img={img}
                     title="first Porject"

@@ -10,7 +10,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
         <Link href={stringLink}>
             <a>
                 <div
-                    className="flex flex-col bg-secondary
+                    className="flex flex-col bg-secondary h-full
               dark:bg-dark_secondary w-full
                 max-w-[500px] 
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out"
