@@ -38,8 +38,8 @@ const Header = () => {
              dark:bg-dark_secondary 
             w-full  flex items-center
             justify-between
-             font-bold font-inter text-lg 
-             md:h-20 h-16 md:px-10 px-4 shadow
+             font-bold font-inter text-lg md:text-2xl 
+             md:h-20 h-16 md:px-14 px-4 shadow
              "
         >
             <Link href="/" className="">

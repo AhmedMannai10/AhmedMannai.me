@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div
             className="flex flex-col gap-4 bg-secondary
-             dark:bg-dark_secondary sm:mx-14 p-8
+             dark:bg-dark_secondary md:mx-10 mx-5 p-8
         rounded-md shadow-lg 
      "
         >

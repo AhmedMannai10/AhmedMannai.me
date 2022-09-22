@@ -1,17 +1,16 @@
 import React from 'react'
 import useRouter from 'next/router';
+import PostTitle from '../../../components/PostTitle';
 
 
-const post = () => {
-
-  const router = useRouter();
-  const {id} = router.query;
+const blogPost = () => { 
 
   return (
-    <div>
-        hello there
+    <div className='flex flex-col gap-10 items-center pt-16 min-h-screen'>
+      <PostTitle title="Serial Port Flutter App" publichedDate="4/5/1002"/>
+     
     </div>
   )
 }
 
-export default post;
+export default blogPost;

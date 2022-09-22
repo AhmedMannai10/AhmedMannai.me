@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BlogCard({ img, title, desc, link }) {
     return (
-        <Link href={"/blog" + link}>
+        <Link href={"/blog/" + link}>
             <a>
                 <div
                     className="flex flex-col bg-secondary

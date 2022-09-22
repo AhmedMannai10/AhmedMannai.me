@@ -7,7 +7,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
     const tagItems = String(tags).split(" ");
     const stringLink = String(link);
     return (
-        <Link href={stringLink}>
+        <Link href={"/projects/" + stringLink}>
             <a>
                 <div
                     className="flex flex-col bg-secondary h-full
