@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import mypic from "../assests/imgs/Ahmed_image_w.png";
-import CtaButton from "./CtaButton";
+import CtaButton from "../components/CtaButton";
 
 const Hero = () => {
     return (

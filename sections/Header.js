@@ -38,7 +38,7 @@ const Header = () => {
              dark:bg-dark_secondary 
             w-full  flex items-center
             justify-between
-             font-bold font-inter text-lg md:text-2xl
+             font-bold font-inter text-lg 
              md:h-20 h-16 md:px-10 px-4 shadow
              "
         >
