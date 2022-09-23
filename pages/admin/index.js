@@ -2,7 +2,7 @@
 import { useAuth } from "../../lib/adminAuth";
 import React from "react";
 import AdminLogin from "../../components/AdminLogin";
-import AdminDashboard from "./AdminDashboard";
+import AdminDashboard from "../../components/AdminDashboard";
 
 const Index = () => {
     const { currentUser } = useAuth();
