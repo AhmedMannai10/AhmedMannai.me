@@ -1,18 +1,16 @@
 import React from "react";
 import ProjectCard from "../../components/ProjectCard";
 import img from "../../assests/imgs/mac.jpg";
-import BlogCard from "../../components/BlogCard";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
-import { useState } from "react";
 import slugify from "../../utils/slugify";
 
 export default function projects() {
     // const [ projectPosts, setProjectPosts] = useState([]);
 
     // using swr for fetching data
-    const { data, error } = useSWR("api/posts", fetcher);
+    const { data, error } = useSWR("api/projects", fetcher);
     // setProjectPosts(data);
     const projects = data;
 

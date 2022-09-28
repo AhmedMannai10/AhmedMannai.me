@@ -6,8 +6,7 @@ export default async (_, res) => {
 
     const postsCollectionRef = collection(db, "blogPosts");
     const posts = await getDocs(postsCollectionRef);
-    const blogPosts = 
-        posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    const blogPosts = posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 
     res.status(200).json(blogPosts);
 };

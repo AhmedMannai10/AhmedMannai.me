@@ -6,11 +6,8 @@ import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
 import slugify from "../../utils/slugify";
 
-
 export default function blog() {
- 
-
-    const { data, error } = useSWR("api/posts", fetcher);
+    const { data, error } = useSWR("api/blogPosts", fetcher);
     // using swr
     const posts = data;
     console.log(posts);
@@ -33,7 +30,7 @@ export default function blog() {
                             <BlogCard
                                 img={img}
                                 title={post.title}
-                                desc={post.description} 
+                                desc={post.description}
                                 key={post.id}
                                 link={slugify(post.title)}
                             />

@@ -2,43 +2,100 @@ import React, { useState } from "react";
 import PostTitle from "./PostTitle";
 import Link from "next/link";
 
+import useSWR from "swr";
+import fetcher from "../utils/fetcher";
+
 import { useAuth } from "../lib/adminAuth";
 
 const AdminDashboard = () => {
     const { logout, currentUser } = useAuth();
     const [isBlog, setIsBlog] = useState(true);
-    const [ isProjects, setIsProjects] = useState(!isBlog);
 
     const changeEditSection = () => {
-        isBlog ? setIsBlog(false) : setIsBlog (true);
-    }
+        isBlog ? setIsBlog(false) : setIsBlog(true);
+    };
+
+    const { data, error } = useSWR(
+        isBlog ? "api/blogPosts" : "api/projects",
+        fetcher
+    );
 
     return (
         currentUser && (
-            <div className="flex flex-col min-h-screen pt-4">
+            <div className="flex flex-col min-h-screen pt-4 gap-10 md:px-20 px-5">
                 <button
-                    className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl"
+                    className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl "
                     onClick={() => logout()}
                 >
                     Logout
                 </button>
-                <div className="flex justify-center items-center text-xl  gap-5">
+
+                <div className="fixed right-24 m-4 mt-0 ">
                     {isBlog ? (
                         <>
-                            <button className="duration-300 border-b-blue-700 border-b-2">
-                                Blog
+                            <button
+                                onClick={() => {
+                                    setIsBlog(false);
+                                }}
+                                className=" bg-green-700 p-1 px-2 rounded-md text-xl duration-300 "
+                            >
+                                Go to Projects
                             </button>
-
-                            <button className="duration-300 ">Projects</button>
                         </>
                     ) : (
                         <>
-                            <button onClick={() => changeEditSection()} className="duration-300 ">Blog</button>
-                            <button  className="duration-300 border-b-blue-700 border-b-2">
-                                Projects
+                            <button
+                                onClick={() => {
+                                    setIsBlog(true);
+                                }}
+                                className="bg-green-700 p-1 px-2 rounded-md text-xl duration-300 "
+                            >
+                                Go To Blog
                             </button>
                         </>
                     )}
+                </div>
+                <h1 className="font-bold text-2xl md:text-3xl mt-10">
+                    My Posts
+                </h1>
+                <div className="bg-secondary dark:bg-dark_secondary">
+                    <table className="table-auto w-full text-center  border-collapse border border-slate-500  ">
+                        <thead>
+                            <tr>
+                                <th className="border border-slate-600">
+                                    Title
+                                </th>
+                                <th className="border border-slate-600">
+                                    Description
+                                </th>
+                                <th className="border border-slate-600">
+                                    Date Published
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data ? (
+                                data.map((element) => {
+                                    return (
+                                        <tr>
+                                            <td className="border border-slate-600">
+                                                {element.title}
+                                            </td>
+
+                                            <td className="border border-slate-600">
+                                                {element.description}
+                                            </td>
+                                            <td className="border border-slate-600">
+                                                {element.publishDate.toString()}
+                                            </td>
+                                        </tr>
+                                    );
+                                })
+                            ) : (
+                                <h1>hello</h1>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         )
