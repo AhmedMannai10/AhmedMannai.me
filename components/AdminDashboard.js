@@ -6,6 +6,7 @@ import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 
 import { useAuth } from "../lib/adminAuth";
+import slugify from "../utils/slugify";
 
 const AdminDashboard = () => {
     const { logout, currentUser } = useAuth();
@@ -77,7 +78,7 @@ const AdminDashboard = () => {
                             {data &&
                                 data.map((element) => {
                                     return (
-                                        <tr>
+                                        <tr key={element.id}>
                                             <td className="border border-slate-600">
                                                 {element.title}
                                             </td>
@@ -90,6 +91,23 @@ const AdminDashboard = () => {
                                                     element.publishDate
                                                         .seconds * 1000
                                                 ).toDateString()}
+                                            </td>
+                                            <td>
+                                                <Link
+                                                    href={
+                                                        "admin" +
+                                                        (isBlog
+                                                            ? "/blogPosts/"
+                                                            : "/projects/") +
+                                                        slugify(element.title)
+                                                    }
+                                                >
+                                                    <a>
+                                                        <span className=" bg-green-500">
+                                                            Edit
+                                                        </span>
+                                                    </a>
+                                                </Link>
                                             </td>
                                         </tr>
                                     );
