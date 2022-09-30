@@ -22,15 +22,15 @@ const AdminDashboard = () => {
 
     return (
         currentUser && (
-            <div className="flex flex-col min-h-screen pt-4 gap-10 md:px-20 px-5">
+            <div className="flex flex-col min-h-screen pt-4 gap-10 md:px-20 px-5 ">
                 <button
-                    className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl "
+                    className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl text-white "
                     onClick={() => logout()}
                 >
                     Logout
                 </button>
 
-                <div className="fixed right-24 m-4 mt-0 ">
+                <div className="fixed right-24 m-4 mt-0 text-white">
                     {isBlog ? (
                         <>
                             <button
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
                     )}
                 </div>
                 <h1 className="font-bold text-2xl md:text-3xl mt-10">
-                    My Posts
+                    {isBlog ? "My Blog Posts" : "My Projects"}
                 </h1>
                 <div className="bg-secondary dark:bg-dark_secondary">
                     <table className="table-auto w-full text-center  border-collapse border border-slate-500  ">
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data ? (
+                            {data &&
                                 data.map((element) => {
                                     return (
                                         <tr>
@@ -86,14 +86,14 @@ const AdminDashboard = () => {
                                                 {element.description}
                                             </td>
                                             <td className="border border-slate-600">
-                                                {element.publishDate.toString()}
+                                                {new Date(
+                                                    element.publishDate
+                                                        .seconds * 1000
+                                                ).toDateString()}
                                             </td>
                                         </tr>
                                     );
-                                })
-                            ) : (
-                                <h1>hello</h1>
-                            )}
+                                })}
                         </tbody>
                     </table>
                 </div>
