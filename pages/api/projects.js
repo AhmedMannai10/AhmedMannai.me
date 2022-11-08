@@ -1,12 +1,33 @@
-import { db } from "../../lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { signOut } from "firebase/auth";
+import {
+    collectionGroup,
+    where,
+    getDocs,
+    limit, 
+    orderBy,
+    startAfter,
+    query,
+    collection,
+} from "firebase/firestore"
+import {firestore, postToJson} from "../../lib/firebase"
+
+const LIMIT = 2
 
 export default async (_, res) => {
-    //     const snapshot = await db.collection("blogPosts").get();
 
-    const postsCollectionRef = collection(db, "projects");
-    const posts = await getDocs(postsCollectionRef);
-    const projects = posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    
+        const postsQuery = query(
+            collection(firestore, "projects"),
+        orderBy("createdAt", "desc"),
+        limit(LIMIT) 
+        );
 
-    res.status(200).json(projects);
+    const posts = (await getDocs(postsQuery)).docs.map(postToJson);
+    console.log(posts)
+
+    res.status(200).json(posts);
+    
+
+
+
 };
