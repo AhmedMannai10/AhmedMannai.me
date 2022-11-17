@@ -42,6 +42,7 @@ export default function projects() {
                     <h1>Loading Scelections</h1>
                 )}
                 <ProjectCard
+                    key="default"
                     img={img}
                     title="first Porject"
                     desc={"this is my first project ever"}

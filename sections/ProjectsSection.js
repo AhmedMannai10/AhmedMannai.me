@@ -3,8 +3,18 @@ import ProjectCard from "../components/ProjectCard";
 import img from "../assests/imgs/mac.jpg";
 import CtaButton from "../components/CtaButton";
 import Link from "next/link";
+import useSWR from "swr";
+import fetcher from "../utils/fetcher";
+import slugify from "../utils/slugify";
 
 export default function ProjectsSection() {
+
+    const { data, error } = useSWR("api/projects", fetcher);
+    // setProjectPosts(data);
+    const projects = data;
+
+
+
     return (
         <div
             className="flex flex-col gap-10
@@ -21,20 +31,25 @@ export default function ProjectsSection() {
                 className=" flex flex-col gap-10
                 md:grid md:grid-cols-2 
             "
-            >
-                <ProjectCard
-                    img={img}
-                    title="first Porject"
-                    desc={"this is my first project ever"}
-                    tags="#ML"
-                    link="/projects"
-                />
-                <ProjectCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    tags="#ML #Python #JavaScript #DataScience #Learning"
-                />
+            >   
+
+                {projects ? (
+                    (projects.slice(0, 2)).map((project) => {
+                        console.log(project);
+                        return (
+                            <ProjectCard
+                                img={img}
+                                title={project.title}
+                                desc={project.description}
+                                key={project.id}
+                                link={slugify(project.title)}
+                            />
+                        );
+                    })
+                ) : (
+                    <h1>Loading Scelections</h1>
+                )}
+                
             </div>
             <Link href="/projects">
                 <a>

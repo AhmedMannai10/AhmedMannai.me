@@ -87,10 +87,9 @@ const AdminDashboard = () => {
                                                 {element.description}
                                             </td>
                                             <td className="border border-slate-600">
-                                                {new Date(
-                                                    element.publishDate
-                                                        .seconds * 1000
-                                                ).toDateString()}
+                                                {
+                                                    element.createdAt
+                                                }
                                             </td>
                                             <td>
                                                 <Link
@@ -101,7 +100,7 @@ const AdminDashboard = () => {
                                                             : "/projects/") +
                                                         slugify(element.title)
                                                     }
-                                                >
+                                                  >
                                                     <a>
                                                         <span className=" bg-green-500">
                                                             Edit
