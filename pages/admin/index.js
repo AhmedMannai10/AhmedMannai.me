@@ -3,17 +3,22 @@ import AdminDashboard from "../../components/AdminDashboard";
 import AuthCheck from "../../components/AuthCheck";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { collection } from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { firestore } from "../../lib/firebase";
 import { kebabCase } from "lodash";
+import toast from "react-hot-toast";
+
+
+
 export default function AdminPage(){
 
     return (
-        <main className="min-h-screen flex flex-col gap-10">
+        <main className="min-h-screen flex flex-col gap-2 mt-10 ">
             <AuthCheck>
-
+            
                 <CreateNewPost/>  
                 <AdminDashboard/>
+
             </AuthCheck>
         </main>
     );
@@ -34,8 +39,7 @@ function CreateNewPost() {
     const createPost = async (e) => {
         e.preventDefault();
         const ref = doc(
-            collection(firestore, "projects"),
-            slug
+            firestore, "projects",slug
         );
 
         console.log("sending");
@@ -51,12 +55,15 @@ function CreateNewPost() {
 
         await setDoc(ref, data);
         toast.success("Post Created!");
+        
 
         router.push(`/admin/${slug}`);
     };
 
     return (
-        <form onSubmit={createPost}>
+        <div className="flex flex-col ">
+
+        <form onSubmit={createPost} className="">
             <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -75,5 +82,7 @@ function CreateNewPost() {
                 Submit
             </button>
         </form>
+
+        </div>
     );
 }

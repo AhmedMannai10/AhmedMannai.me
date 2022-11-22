@@ -11,7 +11,7 @@ import { convertTimestamp, postToJson } from "../lib/firebase";
 
 
 
-const AdminDashboard = () => {
+const AdminDashboard = (props) => {
     const { logout, currentUser } = useAuth();
     const [isBlog, setIsBlog] = useState(true);
 
@@ -36,6 +36,7 @@ const AdminDashboard = () => {
                 </button>
 
                 <div className="fixed right-24 m-4 mt-0 text-white">
+
                     {isBlog ? (
                         <>
                             <button
@@ -101,7 +102,7 @@ const AdminDashboard = () => {
                                                         "admin" +
                                                         (isBlog
                                                             ? "/post-" + element.slug 
-                                                            : "/project_" + element.slug) 
+                                                            : "/project" + element.slug) 
                                                     }
                                                   >
                                                     <a>
