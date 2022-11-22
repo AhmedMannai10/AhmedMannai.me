@@ -1,6 +1,7 @@
+import { NextRequest, NextResponse } from "next/server";
 import React from "react";
 import { useState } from "react";
-
+import { useRouter } from "next/router";
 // firebase
 import { useAuth } from "../lib/adminAuth";
 
@@ -8,20 +9,22 @@ export default function AdminLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    const router = useRouter();
 
     const { login } = useAuth();
 
-    async function submitHundler() {
+    async function submitHundler( ) {
         if (!email || !password) {
             setError("please enter your email and password");
-            return;
+            return ;
         }
         try {
             await login(email, password);
+            router.push("admin")
         } catch (err) {
             setError("Incorrect email or password");
         }
-        return;
+        return ;
     }
 
     return (
@@ -50,7 +53,7 @@ export default function AdminLogin() {
             ></input>
 
             <button
-                onClick={submitHundler}
+                onClick={submitHundler }
                 className="w-full max-w-[30ch] cursor-pointer py-2
           outline outline-2 outline-orange-500 text-gray-400 hover:text-gray-50 
           uppercase  rounded-sm relative hover:-translate-y-1 duration-300
@@ -60,10 +63,7 @@ export default function AdminLogin() {
             </button>
 
             {error && <div className="text-red-600 text-sm ">{error}</div>}
-            <h1
-                onClick={() => setIsLogging(!isLoggingIn)}
-                className="duration-300 cursor-pointer hover:scale-110"
-            ></h1>
+            
         </div>
     );
 }

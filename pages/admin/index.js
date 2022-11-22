@@ -1,13 +1,23 @@
 
-import { useAuth } from "../../lib/adminAuth";
-import React from "react";
-import AdminLogin from "../../components/AdminLogin";
 import AdminDashboard from "../../components/AdminDashboard";
+import AuthCheck from "../../components/AuthCheck";
 
-const Index = () => {
-    const { currentUser } = useAuth();
+export default function AdminPage(){
 
-    return <>{!currentUser ? <AdminLogin /> : <AdminDashboard />}</>;
-};
+    return (
+        <main>
+            <AuthCheck>
 
-export default Index;
+                <AdminDashboard/>
+                <CreateNewPost/> 
+            </AuthCheck>
+        </main>
+    );
+
+}
+
+function CreateNewPost(){
+    return <>
+        Create Posts;
+    </>;
+}

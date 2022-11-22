@@ -48,7 +48,7 @@ const Header = () => {
                 </a>
             </Link>
             <div className="flex flex-1 justify-end gap-7">
-                <Link href="/blog" className=" ">
+                <Link href="/blog" >
                     <a className="flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
                         <i className="fa-solid fa-feather pt-[1px]" />
                         Blog
