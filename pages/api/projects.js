@@ -26,8 +26,5 @@ export default async (_, res) => {
     console.log(posts)
 
     res.status(200).json(posts);
-    
-
-
 
 };

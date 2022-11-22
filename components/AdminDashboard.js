@@ -7,6 +7,9 @@ import fetcher from "../utils/fetcher";
 
 import { useAuth } from "../lib/adminAuth";
 import slugify from "../utils/slugify";
+import { convertTimestamp, postToJson } from "../lib/firebase";
+
+
 
 const AdminDashboard = () => {
     const { logout, currentUser } = useAuth();
@@ -21,9 +24,10 @@ const AdminDashboard = () => {
         fetcher
     );
 
+
     return (
         currentUser && (
-            <div className="flex flex-col min-h-screen pt-4 gap-10 md:px-20 px-5 ">
+    <div className="flex flex-col min-h-full pt-4 gap-10 md:px-20 px-5 ">
                 <button
                     className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl text-white "
                     onClick={() => logout()}
@@ -88,7 +92,7 @@ const AdminDashboard = () => {
                                             </td>
                                             <td className="border border-slate-600">
                                                 {
-                                                    element.createdAt
+                                                    (new Date(element.createdAt)).toISOString()
                                                 }
                                             </td>
                                             <td>
@@ -96,9 +100,8 @@ const AdminDashboard = () => {
                                                     href={
                                                         "admin" +
                                                         (isBlog
-                                                            ? "/blogPosts/"
-                                                            : "/projects/") +
-                                                        slugify(element.title)
+                                                            ? "/post-" + element.slug 
+                                                            : "/project_" + element.slug) 
                                                     }
                                                   >
                                                     <a>

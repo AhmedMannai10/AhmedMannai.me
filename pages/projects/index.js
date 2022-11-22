@@ -27,14 +27,13 @@ export default function projects() {
             <div className="flex flex-col gap-10 md:grid md:grid-cols-2">
                 {projects ? (
                     projects.map((project) => {
-                        console.log(project);
                         return (
                             <ProjectCard
                                 img={img}
                                 title={project.title}
                                 desc={project.description}
-                                key={project.id}
-                                link={slugify(project.title)}
+                                key={project.slug}
+                                link={project.slug}
                             />
                         );
                     })
