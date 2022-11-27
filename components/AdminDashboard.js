@@ -27,9 +27,9 @@ const AdminDashboard = (props) => {
 
     return (
         currentUser && (
-    <div className="flex flex-col min-h-full pt-4 gap-10 md:px-20 px-5 ">
-                <button
-                    className=" fixed right-0 m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl text-white "
+            <>
+ <button
+                    className=" fixed right-0  m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl text-white "
                     onClick={() => logout()}
                 >
                     Logout
@@ -61,6 +61,9 @@ const AdminDashboard = (props) => {
                         </>
                     )}
                 </div>
+
+    <div className="flex flex-col min-h-full pt-4 gap-10 md:px-20 px-5 ">
+               
                 <h1 className="font-bold text-2xl md:text-3xl mt-10">
                     {isBlog ? "My Blog Posts" : "My Projects"}
                 </h1>
@@ -119,6 +122,8 @@ const AdminDashboard = (props) => {
                     </table>
                 </div>
             </div>
+
+            </>
         )
     );
 };

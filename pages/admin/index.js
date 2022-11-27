@@ -29,17 +29,25 @@ export default function AdminPage(){
 function CreateNewPost() {
     const router = useRouter();
     const [title, setTitle] = useState("");
+    const [isProject , setIsProject] = useState(false);
 
     // Ensure slug is Url safe
     const slug = encodeURI(kebabCase(title))
 
     // Validate length
-    const isValid = title.length > 3 && title.length < 100;
+    const isValid = title.length > 3 && title.length < 100 ;
+    let postIsProject;
+
+    if(isProject){
+        postIsProject = "project";
+    }else{
+        postIsProject = "blog-posts"
+    }
 
     const createPost = async (e) => {
         e.preventDefault();
         const ref = doc(
-            firestore, "projects",slug
+            firestore, postIsProject,slug
         );
 
         console.log("sending");
@@ -48,6 +56,8 @@ function CreateNewPost() {
             title,
             slug,
             content: "# hello world!",
+
+            description: "#Desc Project",
             createdAt: serverTimestamp(),
             updateAt: serverTimestamp(),
             
@@ -74,6 +84,12 @@ function CreateNewPost() {
                 <strong>Slug:</strong>
                 {slug}
             </p>
+        <fieldset>
+          <input className name="published" type="checkbox" onClick={() => {setIsProject(!isProject); }}/>
+          <label>Article about a project</label>
+        </fieldset>
+
+
             <button
                 type="submit"
                 disabled={!isValid}
@@ -81,6 +97,7 @@ function CreateNewPost() {
             >
                 Submit
             </button>
+
         </form>
 
         </div>
