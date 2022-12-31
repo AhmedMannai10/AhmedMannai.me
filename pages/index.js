@@ -6,6 +6,7 @@ import Hero from "../sections/Hero";
 import About from "../sections/About";
 import ProjectsSection from "../sections/ProjectsSection";
 import BlogSection from "../sections/BlogSection";
+import { Toaster } from "react-hot-toast";
 
 
 
