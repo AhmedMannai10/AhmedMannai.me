@@ -35,11 +35,11 @@ function CreateNewPost() {
     const slug = encodeURI(kebabCase(title))
 
     // Validate length
-    const isValid = title.length > 3 && title.length < 100 ;
+    const isValid = title.length > 3 && title.length < 100  ;
     let postIsProject;
 
     if(isProject){
-        postIsProject = "project";
+        postIsProject = "projects";
     }else{
         postIsProject = "blog-posts"
     }
@@ -56,24 +56,23 @@ function CreateNewPost() {
             title,
             slug,
             content: "# hello world!",
-
-            description: "#Desc Project",
+            published : false,
+            description: "# Desc Project",
             createdAt: serverTimestamp(),
             updateAt: serverTimestamp(),
-            
         };
 
         await setDoc(ref, data);
         toast.success("Post Created!");
         
 
-        router.push(`/admin/${slug}`);
+        router.push(`/admin/${postIsProject}/${slug}`);
     };
 
     return (
         <div className="flex flex-col ">
 
-        <form onSubmit={createPost} className="">
+        <form onSubmit={createPost} >
             <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -85,15 +84,13 @@ function CreateNewPost() {
                 {slug}
             </p>
         <fieldset>
-          <input className name="published" type="checkbox" onClick={() => {setIsProject(!isProject); }}/>
+          <input  name="published" type="checkbox" onClick={() => {setIsProject(!isProject) }}/>
           <label>Article about a project</label>
         </fieldset>
-
-
             <button
                 type="submit"
                 disabled={!isValid}
-                className=" rounded-full bg-blue-700 text-white shadow-md hover:shadow-none px-2 mt-2"
+                className="rounded-full bg-blue-700 text-white shadow-md hover:shadow-none px-2 mt-2"
             >
                 Submit
             </button>

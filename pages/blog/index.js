@@ -4,10 +4,10 @@ import img from "../../assests/imgs/mac.jpg";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
-import slugify from "../../utils/slugify";
+
 
 export default function blog() {
-    const { data, error } = useSWR("api/blogPosts", fetcher);
+    const { data, error } = useSWR("api/blog-posts", fetcher);
     // using swr
     const posts = data;
     console.log(posts);
@@ -25,14 +25,13 @@ export default function blog() {
             <div className="flex flex-col gap-10 md:grid md:grid-cols-2">
                 {posts ? (
                     posts.map((post) => {
-                        console.log(post);
                         return (
                             <BlogCard
                                 img={img}
                                 title={post.title}
                                 desc={post.description}
-                                key={post.id}
-                                link={slugify(post.title)}
+                                key={post.slug}
+                                link={post.slug}
                             />
                         );
                     })

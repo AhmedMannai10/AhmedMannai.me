@@ -1,23 +1,19 @@
 import {
-    collectionGroup,
-    where,
     getDocs,
     limit, 
-    doc,
     orderBy,
-    startAfter,
     query,
     collection,
 } from "firebase/firestore"
 import {firestore, postToJson} from "../../lib/firebase"
 
-const LIMIT = 3
+const LIMIT = 5
 
 export default async (_, res) => {
 
     
         const postsQuery = query(
-            collection(firestore, "projects"),
+            collection(firestore, "blog-posts"),
         orderBy("createdAt", "desc"),
         limit(LIMIT) 
         );
@@ -28,3 +24,4 @@ export default async (_, res) => {
     res.status(200).json(posts);
 
 };
+

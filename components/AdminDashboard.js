@@ -20,7 +20,7 @@ const AdminDashboard = (props) => {
     };
 
     const { data, error } = useSWR(
-        isBlog ? "api/blogPosts" : "api/projects",
+        isBlog ? "api/blog-posts" : "api/projects",
         fetcher
     );
 
@@ -104,8 +104,8 @@ const AdminDashboard = (props) => {
                                                     href={
                                                         "admin" +
                                                         (isBlog
-                                                            ? "/post-" + element.slug 
-                                                            : "/project" + element.slug) 
+                                                            ? "/blog-posts/" + element.slug 
+                                                            : "/projects/" + element.slug) 
                                                     }
                                                   >
                                                     <a>

@@ -7,6 +7,8 @@ import About from "../sections/About";
 import ProjectsSection from "../sections/ProjectsSection";
 import BlogSection from "../sections/BlogSection";
 
+
+
 export default function Home() {
     const { theme, setTheme } = useTheme();
 

@@ -4,7 +4,6 @@ import img from "../../assests/imgs/mac.jpg";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
-import slugify from "../../utils/slugify";
 
 export default function projects() {
     // const [ projectPosts, setProjectPosts] = useState([]);
@@ -40,14 +39,6 @@ export default function projects() {
                 ) : (
                     <h1>Loading Scelections</h1>
                 )}
-                <ProjectCard
-                    key="default"
-                    img={img}
-                    title="first Porject"
-                    desc={"this is my first project ever"}
-                    tags="#ML"
-                    link="/projects"
-                />
             </div>
         </div>
     );
