@@ -8,6 +8,7 @@ module.exports = {
     ],
     theme: {
         extend: {
+
             fontFamily: {
                 ubuntu: ["Ubuntu"],
                 inter: ["Inter"],
@@ -29,5 +30,5 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [ require('@tailwindcss/typography')],
 };
