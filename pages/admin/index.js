@@ -17,7 +17,6 @@ export default function AdminPage() {
         <main className="min-h-screen flex flex-col gap-2 mt-10 ">
             <AuthCheck>
 
-
                 <CreateNewPost />
                 <AdminDashboard />
 
@@ -61,7 +60,7 @@ function CreateNewPost() {
             published: false,
             description: "# Desc Project",
             createdAt: serverTimestamp(),
-            updateAt: serverTimestamp(),
+            updatedAt: serverTimestamp(),
         };
 
         await setDoc(ref, data);
