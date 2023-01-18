@@ -6,7 +6,6 @@ import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
 
 export default function projects() {
-    // const [ projectPosts, setProjectPosts] = useState([]);
 
     // using swr for fetching data
     const { data, error } = useSWR("api/projects", fetcher);

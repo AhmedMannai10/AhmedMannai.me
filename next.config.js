@@ -10,6 +10,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+ 
+  "baseUrl": ".",
+  "@/components/*" : ["components/*"],
+  "@/lib/*" : ["lib/*"],
+  "@/utils/*" : ["utils/*"],
+
+
 }
 
 
