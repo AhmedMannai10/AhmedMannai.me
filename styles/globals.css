@@ -1,21 +1,21 @@
+@config "../tailwind.config.js";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base{
+
+    @apply min-h-screen;
+    @apply font-ubuntu;
+    @apply bg-primary text-text_color;
     body {
-        @apply bg-primary text-text_color  dark:bg-dark_primary dark:text-dark_text_color;
-        @apply min-h-screen;
-        @apply font-ubuntu;
-    }
-     /* h1{
-
-        @apply text-h_color dark:text-dark_text_color font-bold ;
-        
-    } */
-   
+        @apply dark: bg-dark_primary dark:dark_text_color;
 }
+} */
 
+body {
+    /* @apply dark: bg-dark_primary dark:dark_text_color; */
+    @apply min-h-screen font-ubuntu bg-primary text-text_color dark:bg-dark_primary dark:text-dark_text_color;
 
-
-
+}

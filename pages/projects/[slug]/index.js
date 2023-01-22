@@ -29,12 +29,12 @@ const projectPost = () => {
 
     // const [post] = useDocumentDataOnce(postRef);
 
-    return <main className="flex flex-col mt-10 mx-auto w-full max-w-5xl justify-center px-6 relative prose">
+    return <main className="flex flex-col mt-10 mx-auto w-full max-w-7xl justify-center px-6 relative prose">
         {
             post && (
                 <>
                     <PostTitle title={post.title} publichedDate={post.publichedDate} />
-                    <div className="mx-auto flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
+                    <div className="flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
                         <div className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">
                             <div className="lg:max-w-3xl lg:mx-auto">
 

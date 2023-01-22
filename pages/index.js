@@ -1,12 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import { useTheme } from "next-themes";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
 import ProjectsSection from "../sections/ProjectsSection";
 import BlogSection from "../sections/BlogSection";
-import { Toaster } from "react-hot-toast";
 
 
 

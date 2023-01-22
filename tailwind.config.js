@@ -1,18 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
-    darkMode: "class",
+
+    darkMode: 'class',
     content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
         "./sections/**/*.{js,ts,jsx,tsx}",
     ],
+
+
     theme: {
         extend: {
-
             fontFamily: {
                 ubuntu: ["Ubuntu"],
                 inter: ["Inter"],
             },
+
+
             colors: {
                 //light mode colors
                 primary: "#dbe1e8",
@@ -28,7 +34,38 @@ module.exports = {
 
                 bg_btn: "#473bd5",
             },
+
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        body: {
+                            innerHeight: theme('min-h-screen'),
+                            fontFamily: theme('font-ubuntu'),
+                            color: theme('colors.dark_primary'),
+                            text_color: theme('colors.text_color'),
+                        },
+
+                    }
+                },
+                dark: {
+                    css: {
+                        color: theme('colors.dark_primary'),
+
+                        main: {
+                            color: theme('colors.primary'),
+                            text_color: theme('colors.dark-text_color'),
+                        }
+                    }
+                }
+            }),
+
+
         },
+
     },
-    plugins: [ require('@tailwindcss/typography')],
+    variants: {
+        typography: ['dark']
+    },
+
+    plugins: [require('@tailwindcss/typography')],
 };
