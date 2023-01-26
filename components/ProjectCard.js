@@ -10,24 +10,23 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
         <Link href={"/projects/" + stringLink}>
             <a>
                 <div
-                    className="flex flex-col bg-secondary h-full
-              dark:bg-dark_secondary w-full
-                max-w-[500px] 
+                    className="flex flex-col bg-secondary 
+              dark:bg-dark_secondary  overflow-hidden max-w-[600px]
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out"
                 >
                     <div
-                        className="
-                            "
+                        className="min-h-[200px] relative"
                     >
+
                         <Image
                             loading="lazy"
                             src={img}
                             alt={title + "project image"}
-                            layout="intrinsic"
-                            className="rounded-t-md"
+                            layout='fill'
+                            objectFit="cover"
                         />
                     </div>
-                    <div className="p-4  ">
+                    <div className="p-4 ">
                         <h4
                             className="dark:text-dark_h_color 
                     text-h_color font-semibold

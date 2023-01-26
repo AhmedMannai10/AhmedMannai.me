@@ -57,8 +57,10 @@ export default function ImageUploader() {
         {uploading && <h3>{progress}%</h3>}
         {!uploading &&
             (
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">
-                    <input type="file" className=" border-none" onChange={uploadFile} accept="image/x-png,image/gif,image/jpeg" />
+                <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input" >
+                    <button type="button" onClick={() => { document.getElementById("get_image").click() }} >upload image </button>
+                    {/* <button className=" block  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"> upload image </button> */}
+                    <input type="file" id="get_image" className="hidden" onChange={uploadFile} accept="image/x-png,image/gif,image/jpeg" />
                 </label>
 
             )

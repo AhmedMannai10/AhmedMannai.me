@@ -29,7 +29,7 @@ const projectPost = () => {
 
     // const [post] = useDocumentDataOnce(postRef);
 
-    return <main className="flex flex-col mt-10 mx-auto w-full max-w-7xl justify-center px-6 relative prose">
+    return <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-6 relative prose">
         {
             post && (
                 <>

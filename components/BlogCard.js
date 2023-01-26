@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function BlogCard({ img, title, desc, link }) {
     return (
-        <Link href={"/blog/A" + link}>
+        <Link href={"/blog/" + link}>
             <a>
                 <div
                     className="flex flex-col bg-secondary
@@ -12,19 +12,24 @@ export default function BlogCard({ img, title, desc, link }) {
                 rounded-md shadow-lg 
                 hover:-translate-y-[4px] duration-300 ease-out"
                 >
-                    <div
-                        className="
+                    <div className="p-2">
+                        <div
+                            className="
                             rounded-t-md 
-                            p-3
+                            relative
+                             min-h-[200px] 
+                             
                             "
-                    >
-                        <Image
-                            loading="lazy"
-                            src={img}
-                            alt={title + "project image"}
-                            layout="intrinsic"
-                            className="rounded-md"
-                        />
+                        >
+                            <Image
+                                loading="lazy"
+                                src={img}
+                                alt={title + "project image"}
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-md"
+                            />
+                        </div>
                     </div>
                     <div className="p-4 ">
                         <h4
