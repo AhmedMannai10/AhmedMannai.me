@@ -61,15 +61,15 @@ function PostForm({ defaultValues, postRef, preview }) {
 
     const { isValid, isDirty } = formState;
 
-    const updatePost = async ({ content, description, published, thumbnailURL }) => {
+    const updatePost = async ({ content, description, published, img }) => {
         await updateDoc(postRef, {
             content: content,
             description: description,
             published: published,
             updatedAt: serverTimestamp(),
-            img: thumbnailURL,
+            img: img,
         });
-        reset({ content, description, published, thumbnailURL });
+        reset({ content, description, published, img });
 
         toast.success("Post updated successfully!");
     }
@@ -110,7 +110,7 @@ function PostForm({ defaultValues, postRef, preview }) {
                         </div>
 
                         <div className="my-2">
-                            <input name="thumnailURL" {...register('thumbnailURL')} class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="# thumbnail URL" />
+                            <input name="thumnailURL" {...register('img')} class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="# thumbnail URL" />
                         </div>
 
                         <div className=" bg-white rounded-b-lg dark:bg-gray-800">
