@@ -8,7 +8,7 @@ export default function BlogCard({ img, title, desc, link }) {
             <a>
                 <div
                     className="flex flex-col bg-secondary
-              dark:bg-dark_secondary w-full max-w-sm md:min-w-[400px]
+              dark:bg-dark_secondary  max-w-sm md:min-w-[300px]
                 rounded-md shadow-lg 
                 hover:-translate-y-[4px] duration-300 ease-out"
                 >

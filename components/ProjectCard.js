@@ -11,11 +11,11 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
             <a>
                 <div
                     className="flex flex-col bg-secondary 
-              dark:bg-dark_secondary  overflow-hidden max-w-sm md:min-w-[400px]
-                rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out"
+              dark:bg-dark_secondary overflow-hidden max-w-sm md:min-w-[300px]
+                rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out "
                 >
                     <div
-                        className="min-h-[200px] relative"
+                        className="min-h-[200px] relative "
                     >
 
                         <Image
