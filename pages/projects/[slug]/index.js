@@ -4,9 +4,10 @@ import { useRouter } from "next/router";
 import { kebabCase } from "lodash";
 import PostTitle from "../../../components/PostTitle";
 import { doc, getDoc } from 'firebase/firestore';
-import { firestore } from '../../../lib/firebase';
+import { firestore, postToJson } from '../../../lib/firebase';
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { async } from "@firebase/util";
+import { signOut } from "firebase/auth";
 
 const projectPost = () => {
     const router = useRouter();
@@ -19,10 +20,10 @@ const projectPost = () => {
             const postRef = doc(firestore, 'projects', slug)
 
             const postData = await getDoc(postRef);
-            setPost(postData.data());
-            console.log(post)
+            setPost(postToJson(postData));
+            console.log((new Date(post.createAt)).toString())
         })()
-
+        1
     }, [])
 
     // const postRef = doc(firestore, "projects", slug);
@@ -33,7 +34,7 @@ const projectPost = () => {
         {
             post && (
                 <>
-                    <PostTitle title={post.title} publichedDate={post.publichedDate} />
+                    <PostTitle title={post.title} publichedDate={(new Date(post.createdAt)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} />
                     <div className="flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
                         <div className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">
                             <div className="lg:max-w-3xl lg:mx-auto overflow-auto">
