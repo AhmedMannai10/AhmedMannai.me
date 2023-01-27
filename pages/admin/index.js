@@ -37,18 +37,18 @@ function CreateNewPost() {
 
     // Validate length
     const isValid = title.length > 3 && title.length < 100;
-    let postIsProject;
+    let postType;
 
     if (isProject) {
-        postIsProject = "projects";
+        postType = "projects";
     } else {
-        postIsProject = "blog-posts"
+        postType = "blog-posts"
     }
 
     const createPost = async (e) => {
         e.preventDefault();
         const ref = doc(
-            firestore, postIsProject, slug
+            firestore, postType, slug
         );
 
         console.log("sending");
@@ -61,13 +61,14 @@ function CreateNewPost() {
             description: "# Desc Project",
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp(),
+            img: 'https://firebasestorage.googleapis.com/v0/b/ahmed-blog-24112.appspot.com/o/uploads%2FwSmWK57gltW8Ovm0abJr4LU5cUU2%2F1674325295847.jpeg?alt=media&token=bfb6d3f8-6215-49a4-a0f6-c09f428b6297',
         };
 
         await setDoc(ref, data);
         toast.success("Post Created!");
 
 
-        router.push(`/admin/${postIsProject}/${slug}`);
+        router.push(`/admin/${postType}/${slug}`);
     };
 
     return (

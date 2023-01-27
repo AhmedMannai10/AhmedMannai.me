@@ -11,7 +11,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
             <a>
                 <div
                     className="flex flex-col bg-secondary 
-              dark:bg-dark_secondary  overflow-hidden max-w-[600px]
+              dark:bg-dark_secondary  overflow-hidden max-w-sm md:min-w-[400px]
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out"
                 >
                     <div

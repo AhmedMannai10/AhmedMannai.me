@@ -4,8 +4,15 @@ import img from "../assests/imgs/mac.jpg";
 import Link from "next/link";
 import CtaButton from "../components/CtaButton";
 import BlogCard from "../components/BlogCard";
+import useSWR from "swr";
+import fetcher from "../utils/fetcher";
 
 export default function BlogSection() {
+
+    const { data, error } = useSWR('api/blog-posts', fetcher);
+
+    const blogPosts = data;
+
     return (
         <div
             className="flex flex-col gap-10
@@ -24,17 +31,25 @@ export default function BlogSection() {
             "
             >
 
-                <BlogCard
-                    img={img}
-                    title="Machine Learning"
-                    desc={"Raed 3amel jaw"}
-                    link={"/test"}
-                />
-                <BlogCard
-                    img={img}
-                    title="MacBook"
-                    desc="I finaly bought a mack book"
-                />
+                {blogPosts ? (
+                    (blogPosts.slice(0, 2)).map((post) => {
+                        return (
+                            <BlogCard
+                                img={post.img}
+                                title={post.title}
+                                desc={post.description}
+                                key={post.slug}
+                                link={post.slug}
+                            />
+                        );
+                    }
+                    )
+
+                ) : (
+                    <h1>Loading blog posts</h1>
+                )}
+
+
             </div>
             <Link href="/blog" className="">
                 <a>

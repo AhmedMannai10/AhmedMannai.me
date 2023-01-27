@@ -25,7 +25,7 @@ export default function blog() {
                     posts.map((post) => {
                         return (
                             <BlogCard
-                                img={img}
+                                img={post.img}
                                 title={post.title}
                                 desc={post.description}
                                 key={post.slug}

@@ -11,15 +11,16 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import PostTitle from '../../../components/PostTitle';
 
 import ImageUploader from '../../../components/ImageUploader';
+import PostManager from '../../../components/PostManager';
 
 export default function project() {
   return (
     <AuthCheck>
-      <PostManager />
+      <PostManager postType={'projects'} />
     </AuthCheck>
   )
 }
-
+/*
 function PostManager() {
 
   const [preview, setPreview] = useState(false);
@@ -37,29 +38,26 @@ function PostManager() {
       {post && (
         <>
           <PostTitle title={post.title} publichedDate={post.publichedDate} />
-          {/* <EditPostLayout> */}
-          <div className=' mx-auto flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8'>
-            <section className=' flex-1 gray-300 px-4 lg:max-w-5xl lg:mx-auto'>
+<div className=' mx-auto flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8'>
+  <section className=' flex-1 gray-300 px-4 lg:max-w-5xl lg:mx-auto'>
 
-              <p className='text-lg mb-1'>ID: {post.slug}</p>
+    <p className='text-lg mb-1'>ID: {post.slug}</p>
 
-              <PostForm postRef={postRef} defaultValues={post} preview={preview} />
-            </section>
+    <PostForm postRef={postRef} defaultValues={post} preview={preview} />
+  </section>
 
-            <aside className=' pt-10 lg:p-4 top-14 lg:sticky lg:h-full w-full lg:w-80 flex flex-col align-center space-y-2'>
-              <h3 className='font-bold'>Tools</h3>
-              <button className=' border-1 bg-bg_btn w-24 text-white px-2 rounded-full' onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
-              {/* <Link href={`/${post.username}/${post.slug}`}>
-                <CtaButton name="Live view" />
-              </Link> */}
+  <aside className=' pt-10 lg:p-4 top-14 lg:sticky lg:h-full w-full lg:w-80 flex flex-col align-center space-y-2'>
+    <h3 className='font-bold'>Tools</h3>
+    <button className=' border-1 bg-bg_btn w-24 text-white px-2 rounded-full' onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
+  
 
-            </aside>
+  </aside>
 
-          </div>
+</div>
         </>
       )}
 
-    </main>
+    </main >
   );
 }
 
@@ -146,4 +144,4 @@ function PostForm({ defaultValues, postRef, preview }) {
     </>
   );
 }
-
+*/

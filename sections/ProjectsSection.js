@@ -31,25 +31,24 @@ export default function ProjectsSection() {
                 className=" flex flex-col gap-10
                 md:grid md:grid-cols-2 
             "
-            >   
+            >
 
                 {projects ? (
                     (projects.slice(0, 2)).map((project) => {
-                        console.log(project);
                         return (
                             <ProjectCard
-                                img={img}
+                                img={project.img}
                                 title={project.title}
                                 desc={project.description}
                                 key={project.id}
-                                link={slugify(project.title)}
+                                link={project.slug}
                             />
                         );
                     })
                 ) : (
                     <h1>Loading Scelections</h1>
                 )}
-                
+
             </div>
             <Link href="/projects">
                 <a>

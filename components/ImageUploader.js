@@ -19,7 +19,7 @@ export default function ImageUploader() {
         const file = Array.from(e.target.files)[0];
         const extension = file.type.split('/')[1];
 
-        const storageRef = ref(storage, `uploads/${auth.currentUser.uid}/${Date.now()}.${extension}`);
+        const storageRef = ref(storage, `uploads/${Date.now()}.${extension}`);
         setUploading(true);
 
         // Starts the upload
