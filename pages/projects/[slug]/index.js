@@ -3,38 +3,69 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { useRouter } from "next/router";
 import { kebabCase } from "lodash";
 import PostTitle from "../../../components/PostTitle";
-import { doc, getDoc } from 'firebase/firestore';
+import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import { firestore, postToJson } from '../../../lib/firebase';
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 import { async } from "@firebase/util";
 import { signOut } from "firebase/auth";
 
-const projectPost = () => {
-    const router = useRouter();
-    const { slug } = router.query;
 
-    const [post, setPost] = useState([]);
+export async function getStaticProps({ params }) {
 
-    useEffect(() => {
-        ; (async () => {
-            const postRef = doc(firestore, 'projects', slug)
+    const { slug } = params;
+    console.log("slug : " + slug);
 
-            const postData = await getDoc(postRef);
-            setPost(postToJson(postData));
-            console.log((new Date(post.createAt)).toString())
-        })()
-        1
-    }, [])
+    // const postRef = doc(firestore, 'projects', slug);
+    const postRef = doc(firestore, 'projects', slug);
 
+    const postData = await getDoc(postRef);
+    const post = postToJson(postData);
+
+    return {
+        props: { post },
+        revalidate: 1000,
+    };
+
+}
+
+export async function getStaticPaths() {
+
+    const snapshot = await getDocs(query(collectionGroup(firestore, 'projets')));
+    const paths = snapshot.docs.map((doc) => {
+        const { slug, title } = doc.data();
+        console.log("---------" + slug + "------" + title);
+        return {
+            params: { title, slug },
+
+        };
+    })
+
+
+
+    return {
+        paths,
+        fallback: 'blocking',
+    };
+}
+
+
+export default function projectPost(props) {
+
+    const { post } = props;
+
+    // const [post, setPost] = useState([]);
+
+    // Replace this with getStaticProps
     // const postRef = doc(firestore, "projects", slug);
 
     // const [post] = useDocumentDataOnce(postRef);
+    const date = new Date(post.createdAt);
 
-    return <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
+    return <article itemscope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
         {
             post && (
                 <>
-                    <PostTitle title={post.title} publichedDate={(new Date(post.createdAt)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} />
+                    <PostTitle title={post.title} publichedDate={!isNaN(date) ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ""} />
                     <div className="flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
                         <div className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">
                             <div className="lg:max-w-3xl lg:mx-auto overflow-auto">
@@ -55,10 +86,8 @@ const projectPost = () => {
                 </>)
 
         }
-    </main>
+    </article>
 
 
 }
 
-
-export default projectPost;
