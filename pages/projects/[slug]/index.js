@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { useRouter } from "next/router";
-import { kebabCase } from "lodash";
 import PostTitle from "../../../components/PostTitle";
 import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import { firestore, postToJson } from '../../../lib/firebase';
-import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
-import { async } from "@firebase/util";
-import { signOut } from "firebase/auth";
-
 
 export async function getStaticProps({ params }) {
 
     const { slug } = params;
-    console.log("slug : " + slug);
 
     // const postRef = doc(firestore, 'projects', slug);
     const postRef = doc(firestore, 'projects', slug);
@@ -53,12 +45,6 @@ export default function projectPost(props) {
 
     const { post } = props;
 
-    // const [post, setPost] = useState([]);
-
-    // Replace this with getStaticProps
-    // const postRef = doc(firestore, "projects", slug);
-
-    // const [post] = useDocumentDataOnce(postRef);
     const date = new Date(post.createdAt);
 
     return <article itemscope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">

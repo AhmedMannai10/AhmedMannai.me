@@ -1,30 +1,53 @@
 import React from 'react'
 
 import PostTitle from '../../../components/PostTitle';
-import { doc, getDoc } from 'firebase/firestore';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import { firestore, postToJson } from '../../../lib/firebase';
+import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
+
+export async function getStaticProps({ params }) {
+
+  const { slug } = params;
+
+  // const postRef = doc(firestore, 'projects', slug);
+  const postRef = doc(firestore, 'blog-posts', slug);
+
+  const postData = await getDoc(postRef);
+  const post = postToJson(postData);
+
+  return {
+    props: { post },
+    revalidate: 5000,
+  };
+
+}
+
+export async function getStaticPaths() {
+
+  const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
+  const paths = snapshot.docs.map((doc) => {
+    const { slug, title } = doc.data();
+    console.log("---------" + slug + "------" + title);
+    return {
+      params: { title, slug },
+
+    };
+  })
 
 
-const blogPost = () => {
 
-  const router = useRouter();
-  const { slug } = router.query;
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+}
 
-  const [post, setPost] = useState([]);
 
-  useEffect(() => {
-    ; (async () => {
-      const postRef = doc(firestore, 'blog-posts', slug)
 
-      const postData = await getDoc(postRef);
-      setPost(postToJson(postData));
-      console.log(post)
-    })()
 
-  }, [])
+const blogPost = (props) => {
+
+  const { post } = props;
 
   const publishedDate = new Date(post.createdAt);
   // const postRef = doc(firestore, "projects", slug);
