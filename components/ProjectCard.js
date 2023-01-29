@@ -15,7 +15,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out "
                 >
                     <div
-                        className="min-h-[200px] relative "
+                        className="relative min-h-[250px] "
                     >
 
                         <Image

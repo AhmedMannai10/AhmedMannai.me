@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useTheme } from "next-themes";
 import Hero from "../sections/Hero";
 import About from "../sections/About";

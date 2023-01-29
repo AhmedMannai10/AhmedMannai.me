@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import PostTitle from "./PostTitle";
 import Link from "next/link";
 
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 
 import { useAuth } from "../lib/adminAuth";
-import slugify from "../utils/slugify";
 import { convertTimestamp, postToJson } from "../lib/firebase";
 
 

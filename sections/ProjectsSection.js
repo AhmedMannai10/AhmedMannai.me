@@ -1,11 +1,9 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
-import img from "../assests/imgs/mac.jpg";
 import CtaButton from "../components/CtaButton";
 import Link from "next/link";
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
-import slugify from "../utils/slugify";
 
 export default function ProjectsSection() {
 

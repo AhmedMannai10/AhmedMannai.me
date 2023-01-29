@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { auth, storage } from '../lib/firebase';
+import {  storage } from '../lib/firebase';
 
-import { Loader } from "./Loader";
 import { getDownloadURL, ref, uploadBytes, uploadBytesResumable } from 'firebase/storage'
 
 import React from 'react'
-import { async } from "@firebase/util";
 
 export default function ImageUploader() {
     const [uploading, setUploading] = useState(false);

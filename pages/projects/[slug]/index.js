@@ -2,6 +2,8 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import PostTitle from "../../../components/PostTitle";
 import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import { firestore, postToJson } from '../../../lib/firebase';
+import MetaTags from "../../../components/MetaTags";
+import SharePost from "../../../components/SharePost";
 
 export async function getStaticProps({ params }) {
 
@@ -25,7 +27,6 @@ export async function getStaticPaths() {
     const snapshot = await getDocs(query(collectionGroup(firestore, 'projets')));
     const paths = snapshot.docs.map((doc) => {
         const { slug, title } = doc.data();
-        console.log("---------" + slug + "------" + title);
         return {
             params: { title, slug },
 
@@ -43,36 +44,42 @@ export async function getStaticPaths() {
 
 export default function projectPost(props) {
 
+    const locationURL = `https://ahmedmannai.com${window.location.pathname}`;
+
     const { post } = props;
 
     const date = new Date(post.createdAt);
 
-    return <article itemscope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
+    return <main itemscope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
         {
-            post && (
+            (
                 <>
-                    <PostTitle title={post.title} publichedDate={!isNaN(date) ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ""} />
-                    <div className="flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
-                        <div className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">
+
+                    <MetaTags title={post.title} description={post.description} image={post}></MetaTags>
+                    <PostTitle title={post.title} publichedDate={date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} />
+                    <div className="flex flex-col justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
+                        <article className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">
                             <div className="lg:max-w-3xl lg:mx-auto overflow-auto">
 
                                 <ReactMarkdown>{post.content}</ReactMarkdown>
                             </div>
-                        </div>
+                        </article>
                         <aside class="pt-10 top-14 lg:sticky lg:h-full w-full lg:w-80">
-                            <div className="space-y-6">
-                                <div className="prose dark:prose-dark max-w-none">
-                                    <div className="mb-4 cursor-pointer select-none overflow-auto max-h-[50vh]">
-                                        Hello There
-                                    </div>
-                                </div>
+                            <div className="hidden lg:block">
+                                <SharePost url={locationURL} title={post.title} desc={post.desc} />
+
                             </div>
                         </aside>
+                        <div className=" lg:hidden">
+                            <SharePost url={locationURL} title={post.title} desc={post.desc} />
+
+                        </div>
+
                     </div>
                 </>)
 
         }
-    </article>
+    </main >
 
 
 }

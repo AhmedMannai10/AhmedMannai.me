@@ -1,6 +1,4 @@
 import React from "react";
-import ProjectCard from "../components/ProjectCard";
-import img from "../assests/imgs/mac.jpg";
 import Link from "next/link";
 import CtaButton from "../components/CtaButton";
 import BlogCard from "../components/BlogCard";
@@ -8,6 +6,8 @@ import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 
 export default function BlogSection() {
+
+
 
     const { data, error } = useSWR('api/blog-posts', fetcher);
 
@@ -27,8 +27,7 @@ export default function BlogSection() {
             </h2>
             <div
                 className="flex flex-col gap-10
-                md:grid md:grid-cols-2 
-            "
+                md:grid md:grid-cols-2"
             >
 
                 {blogPosts ? (
@@ -46,7 +45,7 @@ export default function BlogSection() {
                     )
 
                 ) : (
-                    <h1>Loading blog posts</h1>
+                    <h1>Loading log posts</h1>
                 )}
 
 
