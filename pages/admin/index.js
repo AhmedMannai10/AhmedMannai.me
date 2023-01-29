@@ -61,7 +61,7 @@ function CreateNewPost() {
             description: "# Desc Project",
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp(),
-            img: 'https://firebasestorage.googleapis.com/v0/b/ahmed-blog-24112.appspot.com/o/uploads%2FwSmWK57gltW8Ovm0abJr4LU5cUU2%2F1674325295847.jpeg?alt=media&token=bfb6d3f8-6215-49a4-a0f6-c09f428b6297',
+            img: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/mac.jpg?alt=media&token=4510df31-430d-44da-a990-a704075030bf",
         };
 
         await setDoc(ref, data);

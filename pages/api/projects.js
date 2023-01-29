@@ -19,7 +19,7 @@ export default async (_, res) => {
     const postsQuery = query(
         collection(firestore, "projects"),
         orderBy("createdAt", "desc"),
-        where("published", "==", true),
+        // where("published", "==", true),
         limit(LIMIT)
     );
 

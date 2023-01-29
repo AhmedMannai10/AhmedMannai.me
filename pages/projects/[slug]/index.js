@@ -17,14 +17,14 @@ export async function getStaticProps({ params }) {
 
     return {
         props: { post },
-        revalidate: 1000,
+        revalidate: 5000,
     };
 
 }
 
 export async function getStaticPaths() {
 
-    const snapshot = await getDocs(query(collectionGroup(firestore, 'projets')));
+    const snapshot = await getDocs(query(collectionGroup(firestore, 'projects')));
     const paths = snapshot.docs.map((doc) => {
         const { slug, title } = doc.data();
         return {

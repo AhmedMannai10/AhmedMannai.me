@@ -29,7 +29,6 @@ export async function getStaticPaths() {
   const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
   const paths = snapshot.docs.map((doc) => {
     const { slug, title } = doc.data();
-    console.log("---------" + slug + "------" + title);
     return {
       params: { title, slug },
 
@@ -55,10 +54,6 @@ const blogPost = (props) => {
 
 
   const publishedDate = new Date(post.createdAt);
-  // const postRef = doc(firestore, "projects", slug);
-
-  // const [post] = useDocumentDataOnce(postRef);
-
   return <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
     <MetaTags title={post.title} description={post.description} image={post}></MetaTags>
     {
