@@ -4,6 +4,7 @@ import Hero from "../sections/Hero";
 import About from "../sections/About";
 import ProjectsSection from "../sections/ProjectsSection";
 import BlogSection from "../sections/BlogSection";
+import NewsletterCard from "../components/NewsletterCard";
 
 
 
@@ -24,6 +25,7 @@ export default function Home() {
             <About />
             <ProjectsSection />
             <BlogSection />
+            <NewsletterCard />
         </>
     );
 }

@@ -25,9 +25,9 @@ const Hero = () => {
                     and I love engineering in general. I obsessed with creating
                     things
                 </p>
-                <Link href="/contact">
+                <Link href="/subscribe">
                     <a>
-                        <CtaButton name="Contact Me" />
+                        <CtaButton name="Subscribe" />
                     </a>
                 </Link>
             </div>

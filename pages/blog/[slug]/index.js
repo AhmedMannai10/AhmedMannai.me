@@ -6,6 +6,7 @@ import { firestore, postToJson } from '../../../lib/firebase';
 import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import MetaTags from '../../../components/MetaTags';
 import SharePost from '../../../components/SharePost';
+import NewsletterCard from '../../../components/NewsletterCard';
 
 export async function getStaticProps({ params }) {
 
@@ -79,6 +80,8 @@ const blogPost = (props) => {
             </div>
 
           </div>
+
+          <NewsletterCard/>
 
         </>)
 

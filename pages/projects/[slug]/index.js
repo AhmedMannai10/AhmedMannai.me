@@ -4,6 +4,7 @@ import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore
 import { firestore, postToJson } from '../../../lib/firebase';
 import MetaTags from "../../../components/MetaTags";
 import SharePost from "../../../components/SharePost";
+import NewsletterCard from "../../../components/NewsletterCard";
 
 export async function getStaticProps({ params }) {
 
@@ -76,6 +77,7 @@ export default function projectPost(props) {
                         </div>
 
                     </div>
+                    <NewsletterCard />
                 </>)
 
         }
