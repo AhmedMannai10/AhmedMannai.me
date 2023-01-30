@@ -5,6 +5,7 @@ export default function MetaTags(
     {
         title = 'Ahmed Mannnai portfolio / blog website',
         description = 'Personal website for documenting my coding journey',
+        // TODO : chnage for the current website
         image = "https://ahmedmannai.com/resources/img/ahmedimg1.jpeg"
     }
 ) {
