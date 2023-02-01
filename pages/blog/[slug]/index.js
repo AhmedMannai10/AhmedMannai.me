@@ -56,7 +56,7 @@ const blogPost = (props) => {
 
   const publishedDate = new Date(post.createdAt);
   return <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
-    <MetaTags title={post.title} description={post.description} image={post}></MetaTags>
+    <MetaTags title={post.title} description={post.description} image={post.img}></MetaTags>
     {
       (
         <>
@@ -68,16 +68,17 @@ const blogPost = (props) => {
                 <ReactMarkdown>{post.content}</ReactMarkdown>
               </div>
             </article>
-            <aside class="pt-10 top-14 lg:sticky lg:h-full w-full lg:w-80">
-              <div className="hidden lg:block">
+            <aside class="pt-2 lg:pt-10 top-14  lg:sticky lg:h-full w-full lg:w-80">
+              <div className="hidden lg:block ">
+                <SharePost url={locationURL} title={post.title} desc={post.desc} />
+
+              </div>
+              <div className=" lg:hidden">
                 <SharePost url={locationURL} title={post.title} desc={post.desc} />
 
               </div>
             </aside>
-            <div className=" lg:hidden">
-              <SharePost url={locationURL} title={post.title} desc={post.desc} />
 
-            </div>
           </div>
         </>)
 
