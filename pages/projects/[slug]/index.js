@@ -77,7 +77,6 @@ export default function projectPost(props) {
                         </div>
 
                     </div>
-                    <NewsletterCard />
                 </>)
 
         }

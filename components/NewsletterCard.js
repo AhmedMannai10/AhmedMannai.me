@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function NewsletterCard() {
     return (
-        <section className=" border border-gray-200  dark:border-gray-700 shadow-3xl bg-secondary dark:bg-dark_secondary p-6 rounded-xl " >
-            <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+        <section className=" 2" >
+            <div className=" px-4 mx-auto max-w-screen-xl ">
                 <div className="mx-auto  sm:text-center">
-                    <h2 className=" mt-0 font-extrabold tracking-tighter text-gray-900 text-2xl sm:text-3xl mb-4 dark:text-gray-100 ">Get Updates straite to your inbox</h2>
-                    <p className="mb-2 mx-auto max-w-2xl font-light text-gray-500 md:mb-5 sm:text-xl dark:text-gray-400">
-                        Stay up to date with what I am building and I will send you what I am interrested in and what could be helpful for you.
+                    <h2 className=" mt-0 uppercase font-bold tracking-tighter text-lg sm:text-xl mb-1 md:mb-3  ">Get Updates straite to your inbox</h2>
+                    <p className="mb-2 mx-auto max-w-2xl  text-gray-500 md:mb-5 sm:text-lg dark:text-gray-400">
+                        Stay up to date with what I am building.
                     </p>
                     <form action="#">
                         <div className="items-center mx-auto mt-2 mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
@@ -27,9 +27,6 @@ export default function NewsletterCard() {
                 </div>
             </div>
             <div id="custom-substack-embed"></div>
-
-
-            {/* <iframe src="https://ahmedmannai.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe> */}
         </section>
     )
 }

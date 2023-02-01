@@ -78,11 +78,7 @@ const blogPost = (props) => {
               <SharePost url={locationURL} title={post.title} desc={post.desc} />
 
             </div>
-
           </div>
-
-          <NewsletterCard/>
-
         </>)
 
     }
