@@ -1,6 +1,5 @@
 import { React } from "react";
 import BlogCard from "../../components/BlogCard";
-import img from "../../assests/imgs/mac.jpg";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";

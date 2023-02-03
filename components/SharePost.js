@@ -19,7 +19,7 @@ export default function SharePost({ url, title, desc }) {
                     </button>
                 </LinkedinShareButton>
 
-                <TwitterShareButton url={url} title={title} related={["@Ahmed_Mannai_10"]}>
+                <TwitterShareButton url={url} title={title}  >
 
                     <button aria-label="Sahre on Twitter" className=" duration-200 transform transition hover:rotate-[-6deg]">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className=" w-5 h-5">

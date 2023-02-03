@@ -21,8 +21,8 @@ const Hero = () => {
                     AHMED MANNAI
                 </h1>
                 <p className="text-2xl font-medium md:text-3xl">
-                    Software Engineer, I am passionate with developing software,
-                    and I love engineering in general. I obsessed with creating
+                    Software Engineer, I am passionate with developing softwares,
+                    and I love engineering in general. obsessed with creating
                     things
                 </p>
                 <Link href="/subscribe">

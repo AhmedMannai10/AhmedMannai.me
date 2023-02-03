@@ -7,7 +7,7 @@ export default function Document() {
 
                 <meta
                     property="og:image"
-                    content="https://ahmedmannai.com/resources/img/ahmedimg1.jpeg"
+                    content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07"
                 />
                 <link
                     rel="stylesheet"

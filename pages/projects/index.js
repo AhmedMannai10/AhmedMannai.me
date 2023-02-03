@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectCard from "../../components/ProjectCard";
-import img from "../../assests/imgs/mac.jpg";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
