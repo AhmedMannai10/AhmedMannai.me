@@ -4,6 +4,7 @@ import ProjectCard from "../../components/ProjectCard";
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
 import BlogCard from "../../components/BlogCard";
+import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
 
 export default function projects() {
 
@@ -35,7 +36,7 @@ export default function projects() {
                         );
                     })
                 ) : (
-                    <h1>Loading Scelections</h1>
+                    <SkeletonLoadingCard />
                 )}
             </div>
         </div>

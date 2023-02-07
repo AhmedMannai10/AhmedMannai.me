@@ -4,6 +4,7 @@ import CtaButton from "../components/CtaButton";
 import BlogCard from "../components/BlogCard";
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
+import SkeletonLoadingCard from "../components/SkeletonLoadingCard";
 
 export default function BlogSection() {
 
@@ -45,7 +46,7 @@ export default function BlogSection() {
                     )
 
                 ) : (
-                    <h1>Loading log posts</h1>
+                    <SkeletonLoadingCard />
                 )}
 
 

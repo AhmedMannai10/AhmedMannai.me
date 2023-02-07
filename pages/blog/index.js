@@ -3,7 +3,7 @@ import BlogCard from "../../components/BlogCard";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
-
+import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
 
 export default function blog() {
     const { data, error } = useSWR("api/blog-posts", fetcher);
@@ -33,7 +33,8 @@ export default function blog() {
                         );
                     })
                 ) : (
-                    <h1>Loading Selections</h1>
+
+                    <SkeletonLoadingCard />
                 )}
             </div>
         </div>

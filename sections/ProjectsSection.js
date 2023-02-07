@@ -4,6 +4,7 @@ import CtaButton from "../components/CtaButton";
 import Link from "next/link";
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
+import SkeletonLoadingCard from "../components/SkeletonLoadingCard";
 
 export default function ProjectsSection() {
 
@@ -44,7 +45,7 @@ export default function ProjectsSection() {
                         );
                     })
                 ) : (
-                    <h1>Loading Scelections</h1>
+                    <SkeletonLoadingCard/>
                 )}
 
             </div>
