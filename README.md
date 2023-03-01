@@ -1,4 +1,4 @@
-Welcome to my personal portfolio [!ahmedmannai.com](https://ahmedmannai.com) and blog website! This site was built using Next.js, Firebase, and Tailwind CSS.
+Welcome to my personal portfolio [ahmedmannai.com](https://ahmedmannai.com) and blog website! This site was built using Next.js, Firebase, and Tailwind CSS.
 
 Next.js is a framework for building React applications with server-rendering capabilities. This allows for improved performance and SEO.
 
