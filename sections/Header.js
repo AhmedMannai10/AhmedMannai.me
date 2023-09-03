@@ -1,6 +1,10 @@
 import { React, useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import FeatherIcon from "../components/icons/FeatherIcon";
+import CodeIcon from "../components/icons/CodeIcon";
+import MoonIcon from "../components/icons/MoonIcon";
+import SunIcon from "../components/icons/SunIcon";
 
 const Header = () => {
     const { systemTheme, theme, setTheme } = useTheme();
@@ -17,20 +21,28 @@ const Header = () => {
 
         if (currentTheme === "dark") {
             return (
-                <i
+                <div
                     onClick={() => setTheme("light")}
-                    className="fa-solid fa-sun duration-300"
-                ></i>
+                >
+                <SunIcon
+                    className="sm:w-6 w-4 duration-300"
+                />
+                </div>
             );
         } else {
             return (
-                <i
+                <div
+
                     onClick={() => setTheme("dark")}
-                    className="fa-solid fa-moon duration-300"
-                ></i>
-            );
+                >
+                <MoonIcon
+                    className="sm:w-5 w-3 duration-300"
+                />
+</div>
+            );       
         }
     };
+                
 
     return (
         <div
@@ -50,14 +62,14 @@ const Header = () => {
             <div className="flex flex-1 justify-end gap-7">
                 <Link href="/blog" >
                     <a className="flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
-                        <i className="fa-solid fa-feather pt-[1px]" />
+                        <FeatherIcon className=" w-4 md:w-6 pt-[1px] "/>
                         Blog
                     </a>
                 </Link>
 
                 <Link href="/projects">
                     <a className="flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
-                        <i className="fa-solid fa-code pt-[1px]"></i>
+                        <CodeIcon className=" w-5 md:w-7 pt-[1px] "/>
                         Projects
                     </a>
                 </Link>

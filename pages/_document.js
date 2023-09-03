@@ -4,37 +4,19 @@ export default function Document() {
     return (
         <Html>
             <Head>
-        
-               <Script
-                strategy="afterInteractive"
-                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENTID}`}
-               />
-               <Script
-                   id="gtag-init"
-                    strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_MEASUREMENTID}', {
-                      page_path: window.location.pathname,
-                    });
-                  `,
-                }}
-              />
-
+   
                 <meta
                     property="og:image"
                     content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07"
                 />
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-                    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-                    crossOrigin="anonymous"
-                    referrerPolicy="no-referrer"
-                />
+
+                <meta name="description" content="I am a software Engineer, and this is my website where I want to share some of my project and write blog posts"/>
+
+                <meta property="og:image:type" content="image/png"/>
+                <meta property="og:image:width" content="1024"/>
+                <meta property="og:image:height" content="1024"/>
+
+           
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link

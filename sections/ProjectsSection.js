@@ -45,7 +45,10 @@ export default function ProjectsSection() {
                         );
                     })
                 ) : (
-                    <SkeletonLoadingCard/>
+                    <>
+                        <SkeletonLoadingCard/>
+                        <SkeletonLoadingCard/>
+                    </>
                 )}
 
             </div>

@@ -46,7 +46,13 @@ export default function BlogSection() {
                     )
 
                 ) : (
+                    <>
+
                     <SkeletonLoadingCard />
+                    <SkeletonLoadingCard/>
+                    </>
+
+                    
                 )}
 
 
