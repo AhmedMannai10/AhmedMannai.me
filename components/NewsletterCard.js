@@ -18,7 +18,7 @@ export default function NewsletterCard() {
                 { updateEnabled: false, email: email }, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'api-key': process.env.NEXT_PUBLIC_SUB_EMAIL,
+                    'api-key': process.env.SENDINBLUE_API_KEY,
                 },
             },
             );
