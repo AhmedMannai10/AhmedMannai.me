@@ -4,11 +4,14 @@ import BlogCard from "../../components/BlogCard";
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
 import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 export default function blog() {
     const { data, error } = useSWR("api/blog-posts", fetcher);
     // using swr
     const posts = data;
+
+    useDocumentTitle('Blog | Ahmed Mannai')
 
     return (
         <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">

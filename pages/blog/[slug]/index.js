@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 
 const blogPost = (props) => {
 
-  const locationURL = `https://www.ahmedmannai.com${window.location.pathname}`;
+  const locationURL = `https://www.ahmedmannai.me${window.location.pathname}`;
 
   const { post } = props;
 

@@ -3,8 +3,8 @@ import ProjectCard from "../../components/ProjectCard";
 
 import useSWR from "swr";
 import fetcher from "../../utils/fetcher";
-import BlogCard from "../../components/BlogCard";
 import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 export default function projects() {
 
@@ -12,6 +12,9 @@ export default function projects() {
     const { data, error } = useSWR("api/projects", fetcher);
     // setProjectPosts(data);
     const projects = data;
+
+    useDocumentTitle('Projects | Ahmed Mannai')
+
 
     return (
         <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">

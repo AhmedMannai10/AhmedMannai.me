@@ -14,12 +14,9 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Ahmed Mannai</title>
-                <meta
-                    name="Ahmed Mannai's Personal blog protfolio website"
-                    content="Software Projects, blogs , about Ahmed Mannai"
-                />
-                <link rel="icon" href="/favicon.ico" />
+                <title>Home | Ahmed Mannai</title>
+
+               <link rel="icon" href="/ahmedIcon.png" />
             </Head>
             <Hero />
             <About />

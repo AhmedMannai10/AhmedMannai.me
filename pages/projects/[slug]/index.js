@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 export default function projectPost(props) {
 
-    const locationURL = `https://ahmedmannai.com${window.location.pathname}`;
+const locationURL = `https://ahmedmannai.me${window.location.pathname}`;
 
     const { post } = props;
 
