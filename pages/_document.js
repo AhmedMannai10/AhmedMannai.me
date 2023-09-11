@@ -45,7 +45,6 @@ export default function Document() {
                     rel="stylesheet"
                 />
 
-               <title>Ahmed Mannai</title>
                <link rel="icon" href="/ahmedIcon.png" />
             </Head>
             <body>

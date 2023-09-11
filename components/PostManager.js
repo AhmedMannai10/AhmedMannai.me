@@ -42,10 +42,6 @@ export default function PostManager({ postType }) {
                         <aside className=' pt-10 lg:p-4 top-14 lg:sticky lg:h-full w-full lg:w-80 flex flex-col align-center space-y-2'>
                             <h3 className='font-bold'>Tools</h3>
                             <button className=' border-1 bg-bg_btn w-24 text-white px-2 rounded-full' onClick={() => setPreview(!preview)}>{preview ? 'Edit' : 'Preview'}</button>
-                            {/* <Link href={`/${post.username}/${post.slug}`}>
-                <CtaButton name="Live view" />
-              </Link> */}
-
                         </aside>
 
                     </div>
