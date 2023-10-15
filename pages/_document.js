@@ -28,8 +28,16 @@ export default function Document() {
                 <meta property="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07" />
                 <meta property="twitter:image:type" content="image/png" />
                 <meta property="twitter:title" content="Home"/>
+                <meta property="twitter:name" content="HOME | Ahmed Mannai"/>
                 <meta property="twitter:description" content="Documenting my Journey as Software Engineer"/>
 
+                {/* Linked IN*/}
+                <meta property='og:title' content='Title of the article'/>
+                <meta property='og:image' content='https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07'/>
+                <meta property='og:description' content='Description that will show in the preview'/>
+                <meta property='og:url' content='//www.example.com/URL of the article'/>
+
+        
 
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />

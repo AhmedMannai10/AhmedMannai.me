@@ -69,17 +69,18 @@ const blogPost = (props) => {
                 {
                   post.youtubeVideo &&
 
-      <div className=' aspect-video ' >
-                   <iframe 
-                  className=' h-full w-full rounded-lg'
-                  src="https://www.youtube.com/embed/4WiH9pf2ULQ?si=2TzjHgKzRDOgi528" 
-                  width="100%" 
-                  title="YouTube video player" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-</div> 
-                }
+                <div className=' aspect-video ' >
+                    <iframe 
+                      className=' h-full w-full rounded-lg'
+                      src="https://www.youtube.com/embed/4WiH9pf2ULQ?si=2TzjHgKzRDOgi528" 
+                      width="100%" 
+                      title="YouTube video player" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> 
+                  </iframe>
+                </div> 
+                
+              }
               
               <div className="lg:max-w-3xl lg:mx-auto overflow-auto">
                 
