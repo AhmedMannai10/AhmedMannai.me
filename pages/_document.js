@@ -24,18 +24,18 @@ export default function Document() {
                 <meta property="og:image:width" content="1024"/>
                 <meta property="og:image:height" content="1024"/>
                 {/* <!-- Twitter --> */}
-                <meta property="twitter:card" content="ahmedCoverPhoto.png"/>
+                <meta property="twitter:card" content="summary_large_image"/>
                 <meta property="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07" />
-                <meta property="twitter:image:type" content="image/png" />
                 <meta property="twitter:title" content="Home"/>
-                <meta property="twitter:name" content="HOME | Ahmed Mannai"/>
+                <meta property="twitter:" content="Home"/>
                 <meta property="twitter:description" content="Documenting my Journey as Software Engineer"/>
 
                 {/* Linked IN*/}
-                <meta property='og:title' content='Title of the article'/>
-                <meta property='og:image' content='https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07'/>
-                <meta property='og:description' content='Description that will show in the preview'/>
-                <meta property='og:url' content='//www.example.com/URL of the article'/>
+                <meta name="title" property='og:title' content='HOME | Ahmed Mannai'/>
+                <meta property='og:type' content='website'/>
+                <meta name="image" property='og:image' content='https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07'/>
+                <meta name="description" property='og:description' content='Documenting my Journey as Software, plus sharing my knowledge, and my projects and write everything in between'/>
+                <meta property='og:url' content='https://www.ahmedmannai.me'/>
 
         
 

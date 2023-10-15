@@ -4,8 +4,7 @@ import Image from "next/image";
 
 export default function BlogCard({ img, title, desc, link }) {
     return (
-        <Link href={"/blog/" + link}>
-            <a>
+        <Link href={`/blog/${link} `}>
                 <div
                     className="flex flex-col bg-secondary
               dark:bg-dark_secondary  max-w-sm md:min-w-[300px]
@@ -19,7 +18,7 @@ export default function BlogCard({ img, title, desc, link }) {
                             <Image
                                 loading="lazy"
                                 src={img}
-                                alt={title + "project image"}
+                                alt={`${title} project image`}
                                 layout="fill"
                                 objectFit="cover"
                                 className="rounded-md"
@@ -37,7 +36,6 @@ export default function BlogCard({ img, title, desc, link }) {
                         <p className=" text-lg my-2">{desc}</p>
                     </div>
                 </div>
-            </a>
         </Link>
     );
 }

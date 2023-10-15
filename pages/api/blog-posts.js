@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore"
 import { firestore, postToJson } from "../../lib/firebase"
 
-const LIMIT = 5
+const LIMIT = 6 
 
 export default async (_, res) => {
 

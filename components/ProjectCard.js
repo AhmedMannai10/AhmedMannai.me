@@ -7,8 +7,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
     const tagItems = String(tags).split(" ");
     const stringLink = String(link);
     return (
-        <Link href={"/projects/" + stringLink}>
-            <a>
+        <Link href={`/projects/${stringLink}`}>
                 <div
                     className="flex flex-col bg-secondary 
               dark:bg-dark_secondary overflow-hidden max-w-sm md:min-w-[300px]
@@ -21,7 +20,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
                         <Image
                             loading="lazy"
                             src={img}
-                            alt={title + "project image"}
+                            alt={`${title}  project image`}
                             layout='fill'
                             objectFit="cover"
                         />
@@ -43,7 +42,6 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
                         </div>
                     </div>
                 </div>
-            </a>
         </Link>
     );
 }

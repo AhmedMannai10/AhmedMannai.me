@@ -56,7 +56,7 @@ const blogPost = (props) => {
 
   const publishedDate = new Date(post.createdAt);
   return <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
-    <MetaTags title={post.title} description={post.description} image={post.img}></MetaTags>
+    <MetaTags title={post.title} description={post.description} image={post.img}/>
     {
       (
         <>
