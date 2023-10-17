@@ -1,23 +1,19 @@
 import Footer from "./Footer";
 import Header from "./Header";
-import MetaTags from "../components/MetaTags";
-import {useRouter} from "next/router";
 
 
 const Layout = ({ children}) => {
-    const router = useRouter();
         return (
         <>
-            <MetaTags />
-        <div>
+            <div>
             <Header/>
 
             <main className="flex flex-col gap-20 px-4 py-2 md:px-10 min-h-screen ">
                 {children}
             </main>
             <Footer />
-        </div>
-        </>
+            </div>
+       </>
     );
 };
 

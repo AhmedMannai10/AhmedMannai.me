@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
     return (
         <AuthProvider>
             <ThemeProvider attribute="class" enableSystem={true}>
-                
                 <Toaster />
                 <Layout >
                     <Component {...pageProps} />

@@ -56,7 +56,7 @@ const locationURL = `https://ahmedmannai.me${window.location.pathname}`;
             (
                 <>
 
-                    <MetaTags title={post.title} description={post.description} image={post.img}></MetaTags>
+                    <MetaTags title={post.title} description={post.description} image={post.img}/>
                     <PostTitle title={post.title} publichedDate={date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} />
                     <div className="flex flex-col justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
                         <article className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-dark_secondary dark:border-gray-600 prose dark:prose-invert p-4 ">

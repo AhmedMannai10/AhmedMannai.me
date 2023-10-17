@@ -14,11 +14,7 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <MetaTags/>
-                <title>Home | Ahmed Mannai</title>
-                <link rel="icon" href="/ahmedIcon.png" />
-            </Head>
+            <MetaTags />
             <Hero />
             <About />
             <ProjectsSection />

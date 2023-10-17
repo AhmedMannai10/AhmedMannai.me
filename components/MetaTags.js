@@ -22,25 +22,24 @@ export default function MetaTags(
         
                 <title>{meta.title}</title>
                 <meta name="description" content={meta.description}/>
+                <meta name="title" content={meta.title}/>
                 <link rel="icon" href="/ahmedIcon.png" />
                 {/* open graph */}
-                <meta property="og:url" content={`https://www.ahmedmannai.me/${router.asPath}`}/>
-
-
+                <meta property="og:url" content={`https://www.ahmedmannai.me${router.asPath}`}/>
                 <meta property="og:type" content={meta.type}/>
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:site_name" content="Ahmed Mannai"/>
                 <meta property="og:description" content={meta.description}/>
-                <meta name="image" property="og:image" content={meta.image}/>
-                <meta name="author" content="Ahmed Mannai"/>
+                <meta property="og:image" content={meta.image}/>
+                <meta name="author" content="@ahmmed_mannai_10"/>
 
                 {/* ------- Twitter meta data ------- */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@Ahmed_Mannai_10" />
-                <meta name="twitter:creator" content="@Ahmed_Mannai_10" />
-                <meta name="twitter:title" content={meta.title} />
-                <meta name="twitter:description" content={meta.description} />
-                <meta name="twitter:image" content={meta.image} />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:site" content="@Ahmed_Mannai_10" />
+                <meta property="twitter:creator" content="@Ahmed_Mannai_10" />
+                <meta property="twitter:title" content={meta.title} />
+                <meta property="twitter:description" content={meta.description} />
+                <meta property="twitter:image" content={meta.image} />
 
 
 
