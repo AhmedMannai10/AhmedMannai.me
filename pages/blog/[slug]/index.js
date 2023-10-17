@@ -95,7 +95,7 @@ const blogPost = (props) => {
                 <ReactMarkdown>{post.content}</ReactMarkdown>
                 </div>
                 </article>
-                <aside class="pt-2 lg:pt-10 top-14  lg:sticky lg:h-full w-full lg:w-80">
+                <aside className="pt-2 lg:pt-10 top-14  lg:sticky lg:h-full w-full lg:w-80">
                 <div className="hidden lg:block ">
                 <SharePost url={locationURL} title={post.title} desc={post.desc} />
 

@@ -4,13 +4,13 @@ import { LinkedinShareButton, TwitterShareButton } from 'react-share'
 export default function SharePost({ url, title, desc }) {
     return (
 
-        <div class="text-sm text-gray-700 dark:text-gray-300 flex flex-wrap flex-col mt-6 lg:mt-0 sm:flex-row lg:flex-col items-center justify-center gap-4">
+        <div className="text-sm text-gray-700 dark:text-gray-300 flex flex-wrap flex-col mt-6 lg:mt-0 sm:flex-row lg:flex-col items-center justify-center gap-4">
             <h3 className="font-medium pb-1 my-0 uppercase text-gray-700 dark:text-gray-300 flex justify-center">Share with others</h3>
             <div className="m-0 flex items-center justify-center gap-4">
                 <LinkedinShareButton url={url} source="https://www.ahmedmannai.com" title={title} summary={desc}>
 
-                    <button aria-label="Sahre on LinkedIn" className=" duration-200 transform transition hover:rotate-[-6deg]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5">
+                    <button aria-label="Sahre on LinkedIn" className=" duration-200 transform transition hover:rotate-[-6deg]"  >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-5 h-5">
 
                             <title>LinkedIn</title>
                             <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
@@ -21,7 +21,7 @@ export default function SharePost({ url, title, desc }) {
 
                 <TwitterShareButton url={url} title={title}  >
 
-                    <button aria-label="Sahre on Twitter" className=" duration-200 transform transition hover:rotate-[-6deg]">
+                    <button aria-label="Sahre on Twitter" className=" duration-200 transform transition hover:rotate-[-6deg]" >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className=" w-5 h-5">
                             <title>Twitter</title>
 

@@ -115,7 +115,7 @@ function PostForm({ defaultValues, postRef, preview }) {
                                 maxLength: { value: 20000, message: 'content is too long' },
                                 minLength: { value: 20, message: 'content is too short' },
                                 required: true
-                            })} id="editor" rows="15" class="block w-full p-2 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article..." required></textarea>
+                            })} id="editor" rows="15" class="block w-full p-2 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article..." required/>
                         </div>
                         {errors && <p className=' text-red-600 font-bold'>{errors}</p>}
 

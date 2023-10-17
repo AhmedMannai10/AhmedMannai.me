@@ -51,11 +51,10 @@ const locationURL = `https://ahmedmannai.me${window.location.pathname}`;
 
     const date = new Date(post.createdAt);
 
-    return <main itemscope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
+    return <main itemScope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
         {
             (
                 <>
-
                     <MetaTags title={post.title} description={post.description} image={post.img}/>
                     <PostTitle title={post.title} publichedDate={date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} />
                     <div className="flex flex-col justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8">
@@ -65,7 +64,7 @@ const locationURL = `https://ahmedmannai.me${window.location.pathname}`;
                                 <ReactMarkdown>{post.content}</ReactMarkdown>
                             </div>
                         </article>
-                        <aside class=" pt-2 lg:pt-10 top-14 lg:sticky lg:h-full w-full lg:w-80">
+                        <aside className=" pt-2 lg:pt-10 top-14 lg:sticky lg:h-full w-full lg:w-80">
                             <div className="hidden lg:block">
                                 <SharePost url={locationURL} title={post.title} desc={post.desc} />
 

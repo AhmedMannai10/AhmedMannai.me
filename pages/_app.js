@@ -6,14 +6,14 @@ import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <AuthProvider>
             <ThemeProvider attribute="class" enableSystem={true}>
                 <Toaster />
                 <Layout >
+                <AuthProvider>
                     <Component {...pageProps} />
+                </AuthProvider>
                 </Layout>
             </ThemeProvider>
-        </AuthProvider>
     );
 }
 
