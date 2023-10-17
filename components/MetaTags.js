@@ -1,34 +1,50 @@
 import React from 'react'
 import Head from 'next/head'
+import {useRouter} from 'next/router';
 
 export default function MetaTags(
     {
-        title = 'Ahmed Mannnai portfolio / blog website',
-        description = 'Exploring the World of Software Engineering: Join me on my personal website as I embark on a journey through the realm of code and creativity.',
-        // TODO : chnage for the current website
-        image = 'https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07', 
-        url = "https://ahmedmannai.me/"
+        pageMeta
     }
 ) {
+    const router = useRouter();
+
+    const meta = {
+        title: "Home | Ahmed Mannai",
+        description: "Documenting my journey as a software engineer",
+        type: "website",
+        image: "https://ahmedmannai.me/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fahmed-mannai.appspot.com%2Fo%2Fuploads%252F1675363540779.jpeg%3Falt%3Dmedia%26token%3D56790d52-2d1b-42d4-a39a-99c89c661b07&w=1920&q=75",
+        ... pageMeta
+    };
+
     return (
         <Head>
-            <title>{title}</title>
-            {/* ------- Twitter meta data ------- */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@Ahmed_Mannai_10" />
-            <meta name="twitter:creator" content="@Ahmed_Mannai_10" />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={image} />
+        
+                <title>{meta.title}</title>
+                <meta name="description" content={meta.description}/>
+                <link rel="icon" href="/ahmedIcon.png" />
+                {/* open graph */}
+                <meta property="og:url" content={`https://www.ahmedmannai.me/${router.asPath}`}/>
 
-            <meta property="og:url" content={url}/>
-            <meta name="title" property="og:title" content={title}/>
-            <meta name="description" property="og:description" content={description}/>
-            <meta name="image" property="og:image" content={image}/>
-            <meta name="author" content="Ahmed Mannai"/>
 
-            {/* Linked IN*/}
-            <meta property='og:type' content='website'/>
+                <meta property="og:type" content={meta.type}/>
+                <meta property="og:title" content={meta.title}/>
+                <meta property="og:site_name" content="Ahmed Mannai"/>
+                <meta property="og:description" content={meta.description}/>
+                <meta name="image" property="og:image" content={meta.image}/>
+                <meta name="author" content="Ahmed Mannai"/>
+
+                {/* ------- Twitter meta data ------- */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@Ahmed_Mannai_10" />
+                <meta name="twitter:creator" content="@Ahmed_Mannai_10" />
+                <meta name="twitter:title" content={meta.title} />
+                <meta name="twitter:description" content={meta.description} />
+                <meta name="twitter:image" content={meta.image} />
+
+
+
+
 
         </Head>
     )
