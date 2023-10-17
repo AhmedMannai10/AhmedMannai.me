@@ -22,10 +22,10 @@ export default function MetaTags(
             <meta name="twitter:image" content={image} />
 
             <meta property="og:url" content={url}/>
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={image} />
-
+            <meta name="title" property="og:title" content={title}/>
+            <meta name="description" property="og:description" content={description}/>
+            <meta name="image" property="og:image" content={image}/>
+            <meta name="author" content="Ahmed Mannai"/>
         </Head>
     )
 }
