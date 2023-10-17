@@ -5,24 +5,6 @@ export default function Document() {
     return (
         <Html>
             <Head>
-               
-                <meta
-                    property="og:image"
-                    content="/ahmedCoverPhoto.png"
-                />
-
-                <meta
-                    property="og:image"
-                    content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07"
-
-                />
-
-                <meta name="description" content="I share about Software Engineering and life lessons"/>
-
-
-                <meta property="og:image:type" content="image/png" />
-                <meta property="og:image:width" content="1024"/>
-                <meta property="og:image:height" content="1024"/>
                 {/* <!-- Twitter --> */}
                 <meta property="twitter:card" content="summary_large_image"/>
                 <meta property="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07" />

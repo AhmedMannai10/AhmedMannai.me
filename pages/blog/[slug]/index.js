@@ -6,7 +6,6 @@ import { firestore, postToJson } from '../../../lib/firebase';
 import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import MetaTags from '../../../components/MetaTags';
 import SharePost from '../../../components/SharePost';
-import NewsletterCard from '../../../components/NewsletterCard';
 
 export async function getStaticProps({ params }) {
 
@@ -72,6 +71,7 @@ const blogPost = (props) => {
                 <div className=' aspect-video ' >
                     <iframe 
                       className=' h-full w-full rounded-lg'
+                      //Todo: change dynamic youtube vide => post.video
                       src="https://www.youtube.com/embed/4WiH9pf2ULQ?si=2TzjHgKzRDOgi528" 
                       width="100%" 
                       title="YouTube video player" 
