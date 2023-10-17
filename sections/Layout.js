@@ -1,10 +1,14 @@
 import Footer from "./Footer";
 import Header from "./Header";
+import MetaTags from "../components/MetaTags";
+
 
 const Layout = ({ children }) => {
     return (
         <div>
             <Header />
+            <MetaTags/>
+
             <main className="flex flex-col gap-20 px-4 py-2 md:px-10 min-h-screen ">
                 {children}
             </main>

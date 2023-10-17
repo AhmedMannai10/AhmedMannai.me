@@ -4,9 +4,9 @@ import Head from 'next/head'
 export default function MetaTags(
     {
         title = 'Ahmed Mannnai portfolio / blog website',
-        description = 'Personal website for documenting my coding journey',
+        description = 'Exploring the World of Software Engineering: Join me on my personal website as I embark on a journey through the realm of code and creativity.',
         // TODO : chnage for the current website
-        image, 
+        image = 'https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07', 
         url = "https://ahmedmannai.me/"
     }
 ) {
@@ -26,7 +26,6 @@ export default function MetaTags(
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
 
-            {/* ------- LinkedIN meta data ------- */}
         </Head>
     )
 }
