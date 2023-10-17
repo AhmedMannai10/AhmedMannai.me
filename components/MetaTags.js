@@ -26,6 +26,10 @@ export default function MetaTags(
             <meta name="description" property="og:description" content={description}/>
             <meta name="image" property="og:image" content={image}/>
             <meta name="author" content="Ahmed Mannai"/>
+
+            {/* Linked IN*/}
+            <meta property='og:type' content='website'/>
+
         </Head>
     )
 }
