@@ -1,10 +1,12 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import {MetaTags} from "../components/MetaTags";
 
 
 export default function Document() {
     return (
         <Html>
             <Head>
+                <MetaTags/>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
