@@ -5,6 +5,8 @@ import { firestore, postToJson } from '../../../lib/firebase';
 import MetaTags from "../../../components/MetaTags";
 import SharePost from "../../../components/SharePost";
 import NewsletterCard from "../../../components/NewsletterCard";
+import useSWR from "swr";
+import fetcher from "../../../utils/fetcher";
 
 export async function getStaticProps({ params }) {
 
@@ -41,17 +43,22 @@ export async function getStaticPaths() {
         fallback: 'blocking',
     };
 }
+const fetchCurrentProject = (data) => {
+    return data.find( item => {
+       return item.slug === "my-personal-website";
+   }) 
+}
 
 
 export default function projectPost(props) {
 
 const locationURL = `https://ahmedmannai.me${window.location.pathname}`;
 
+        
     const { post } = props;
 
     const date = new Date(post.createdAt);
-
-    return <main itemScope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
+        return <main itemScope itemType="" className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">
         {
             (
                 <>

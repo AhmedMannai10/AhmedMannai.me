@@ -23,7 +23,6 @@ export default function MetaTags(
                 <title>{meta.title}</title>
                 <meta name="description" content={meta.description}/>
                 <meta name="title" content={meta.title}/>
-                <link rel="icon" href="/ahmedIcon.png" />
                 {/* open graph */}
                 <meta property="og:url" content={`https://www.ahmedmannai.me${router.asPath}`}/>
                 <meta property="og:type" content={meta.type}/>

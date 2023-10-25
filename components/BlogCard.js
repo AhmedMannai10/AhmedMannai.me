@@ -7,7 +7,7 @@ export default function BlogCard({ img, title, desc, link }) {
         <Link href={`/blog/${link} `}>
                           
             
-        <div className="max-w-sm   bg-secondary
+        <div className="max-w-sm bg-secondary max-h-fit
               dark:bg-dark_secondary rounded-lg shadow 
                 rounded-md shadow-lg hover:-translate-y-[4px] duration-300 ease-out overflow-hidden
         ">

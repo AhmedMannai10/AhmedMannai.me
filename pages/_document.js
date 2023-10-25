@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
     return (
-        <Html>
+        <Html lang="en">
             <Head>
 
                 <meta name="description" content="Documenting my journey as a software engineer"/>
@@ -36,7 +36,7 @@ export default function Document() {
                     rel="stylesheet"
                 />
 
-               <link rel="icon" href="/ahmedIcon.png" />
+               <link rel="icon" type="image/x-icon" href="/ahmedIcon.png" />
             </Head>
             <body>
                 <Main />

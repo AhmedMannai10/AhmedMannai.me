@@ -1,11 +1,8 @@
 import {
-    collectionGroup,
     where,
     getDocs,
     limit,
-    doc,
     orderBy,
-    startAfter,
     query,
     collection,
 } from "firebase/firestore"
