@@ -1,21 +1,42 @@
-import { React } from "react";
+import { React, useState } from "react";
 import BlogCard from "../../components/BlogCard";
 
-import useSWR from "swr";
-import fetcher from "../../utils/fetcher";
 import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
 import useDocumentTitle from "../../utils/useDocumentTitle";
 
-export default function blog() {
-    const { data, error } = useSWR("api/blog-posts", fetcher);
-    // using swr
-    const posts = data;
+import { collection, query, orderBy, limit, where, getDocs } from "firebase/firestore";
+import { firestore, postToJson } from "../../lib/firebase";
+import MetaTags from "../../components/MetaTags";
+
+
+
+const MAX_ARTICLES = 6;
+export async function getServerSideProps(context){
+
+    const postsQuery = query(
+        collection(firestore, "blog-posts"),
+        orderBy("createdAt", "desc"),
+        where("published", "==", true),
+        limit(MAX_ARTICLES),
+    );
+
+    const posts = (await getDocs(postsQuery)).docs.map(postToJson);
     
 
+    return {
+        props: {posts},
+    }
 
-    useDocumentTitle('Blog | Ahmed Mannai')
+}
+
+export default function blog(props) {
+    
+    const [articles, setArticles] = useState(props.posts);
+
 
     return (
+        <main>
+        <MetaTags title="Blog" description="Get the latest article on my websites"/>
         <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">
             <h1
                 className="dark:text-dark_h_color text-h_color 
@@ -25,8 +46,8 @@ export default function blog() {
             </h1>
 
             <div className="flex flex-col gap-10 md:grid md:grid-cols-2 ">
-                {posts ? (
-                    posts.map((post) => {
+                {articles ? (
+                    articles.map((post) => {
 
                         return (
                             <BlogCard
@@ -44,5 +65,6 @@ export default function blog() {
                 )}
             </div>
         </div>
+        </main>
     );
 }

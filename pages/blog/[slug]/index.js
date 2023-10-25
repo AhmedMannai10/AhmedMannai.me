@@ -9,26 +9,43 @@ import SharePost from '../../../components/SharePost';
 import useSWR from "swr";
 import fetcher from "../../../utils/fetcher";
 
-export async function getServerSideProps({ params }) {
 
-  const { slug } = params;
+export async function getStaticProps({ params }) {
 
-{
-    
-  // const postRef = doc(firestore, 'projects', slug);
-  const postRef = doc(firestore, 'blog-posts', slug);
+    const { slug } = params;
 
-  const postData = await getDoc(postRef);
-  const post = postToJson(postData);
+    // const postRef = doc(firestore, 'projects', slug);
+    const postRef = doc(firestore, 'blog-posts', slug);
 
-  return {
-    props: { post },
+    const postData = await getDoc(postRef);
+    const post = postToJson(postData);
 
-  };
-
-}
+    return {
+        props: { post },
+        revalidate: 100,
+    };
 
 }
+
+export async function getStaticPaths() {
+
+    const snapshot = await getDocs(query(collectionGroup(firestore, 'projects')));
+    const paths = snapshot.docs.map((doc) => {
+        const { slug } = doc.data();
+        return {
+            params: { slug },
+
+        };
+    })
+
+    return {
+        paths,
+        fallback: 'blocking',
+    };
+}
+
+
+
 
 const blogPost = (props) => {
 
@@ -52,12 +69,7 @@ const blogPost = (props) => {
 
   const publishedDate = new Date(post.createdAt);
   return <>
-        <MetaTags pageMeta={{
-                title:`${post.title}`,
-                description:`${post.description}`,
-                image:`${post.img}`,
-                type:"article",
-        }}/>
+        <MetaTags title={post.title} description={post.desc} image={post.img}/>
 
 
         <main className="flex flex-col  mt-10 mx-auto w-full max-w-7xl justify-center p-2 sm:p-6 relative prose">

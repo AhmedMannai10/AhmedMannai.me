@@ -29,6 +29,7 @@ const AdminDashboard = (props) => {
                 <button
                     className=" fixed right-0  m-4 mt-0 bg-blue-700 p-1 px-2 rounded-md text-xl text-white "
                     onClick={() => logout()}
+                    type="button"
                 >
                     Logout
                 </button>
