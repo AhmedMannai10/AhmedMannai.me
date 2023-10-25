@@ -12,6 +12,20 @@ const LIMIT = 6
 
 export default async (_, res) => {
 
+    /*
+     * Middleware included to parse the incoming request `req`.
+     * req.cookies
+     * req.query
+     * req.body
+     */
+
+    /*
+     * Express-like helper functions for the response `res`.
+     * res.status(200);
+     * res.json({});
+     * res.send('HTTP response');
+     */
+
 
     const postsQuery = query(
         collection(firestore, "blog-posts"),
@@ -21,9 +35,12 @@ export default async (_, res) => {
     );
 
     const posts = (await getDocs(postsQuery)).docs.map(postToJson);
-    console.log(posts)
+    
+
 
     res.status(200).json(posts);
+
+
 
 };
 

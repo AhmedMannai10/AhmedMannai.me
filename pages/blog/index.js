@@ -10,6 +10,8 @@ export default function blog() {
     const { data, error } = useSWR("api/blog-posts", fetcher);
     // using swr
     const posts = data;
+    
+
 
     useDocumentTitle('Blog | Ahmed Mannai')
 
@@ -25,6 +27,7 @@ export default function blog() {
             <div className="flex flex-col gap-10 md:grid md:grid-cols-2 ">
                 {posts ? (
                     posts.map((post) => {
+
                         return (
                             <BlogCard
                                 img={post.img}

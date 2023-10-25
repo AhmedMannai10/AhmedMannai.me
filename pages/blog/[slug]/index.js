@@ -6,11 +6,15 @@ import { firestore, postToJson } from '../../../lib/firebase';
 import { collectionGroup, doc, getDoc, getDocs, query } from 'firebase/firestore';
 import MetaTags from '../../../components/MetaTags';
 import SharePost from '../../../components/SharePost';
+import useSWR from "swr";
+import fetcher from "../../../utils/fetcher";
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
 
   const { slug } = params;
 
+{
+    
   // const postRef = doc(firestore, 'projects', slug);
   const postRef = doc(firestore, 'blog-posts', slug);
 
@@ -19,34 +23,27 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { post },
-    revalidate: 5000,
+
   };
 
 }
 
-export async function getStaticPaths() {
-
-  const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
-  const paths = snapshot.docs.map((doc) => {
-    const { slug, title } = doc.data();
-    return {
-      params: { title, slug },
-
-    };
-  })
-
-
-
-  return {
-    paths,
-    fallback: 'blocking',
-  };
 }
-
-
-
 
 const blogPost = (props) => {
+
+    const { data, error } = useSWR("api/blog-posts", fetcher);
+    // using swr
+    const listArticles = data;
+
+    const article = listArticles.filter((slug) => {
+        return listArticles.slug === slug;
+    });
+    
+    console.log(article);
+
+
+
 
   const locationURL = `https://www.ahmedmannai.me${window.location.pathname}`;
 
@@ -79,7 +76,7 @@ const blogPost = (props) => {
                     <div className=' aspect-video ' >
                     <iframe 
                     className=' h-full w-full rounded-lg'
-                    //Todo: change dynamic youtube vide => post.video
+                    //Todo: change dynamic youtube video => post.video
                     src="https://www.youtube.com/embed/4WiH9pf2ULQ?si=2TzjHgKzRDOgi528" 
                     width="100%" 
                     title="YouTube video player" 
