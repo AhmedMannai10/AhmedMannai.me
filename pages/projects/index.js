@@ -32,9 +32,7 @@ export default function projects(props) {
 
     const [projects, setProjects] = useState(props.projects);
 
-    console.log(projects);
 
-    useDocumentTitle('Projects | Ahmed Mannai')
 
 
     return (

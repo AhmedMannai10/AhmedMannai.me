@@ -15,7 +15,7 @@ export default function MetaTags(
     return (
         <Head>
         
-                <title>{title}</title>
+                <title>{`${title} | Ahmed Mannai` }</title>
                 <meta name="description" content={description}/>
                 <meta name="title" content={title}/>
                 {/* open graph */}
