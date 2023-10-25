@@ -6,8 +6,7 @@ export default function MetaTags(
     {
         title = "Home | Ahmed Mannai",
         description= "Documenting my journey as a software engineer",
-        type= "website",
-        image= "https://ahmedmannai.me/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fahmed-mannai.appspot.com%2Fo%2Fuploads%252F1675363540779.jpeg%3Falt%3Dmedia%26token%3D56790d52-2d1b-42d4-a39a-99c89c661b07&w=1920&q=75",
+        image= "https://www.ahmedmannai.me/ahmedCoverPhoto.png",
         ... pageMeta
     }) {
     const router = useRouter();
@@ -21,7 +20,6 @@ export default function MetaTags(
                 <meta name="title" content={title}/>
                 {/* open graph */}
                 <meta property="og:url" content={`https://www.ahmedmannai.me${router.asPath}`}/>
-                <meta property="og:type" content={type}/>
                 <meta property="og:title" content={title}/>
                 <meta property="og:site_name" content="Ahmed Mannai"/>
                 <meta property="og:description" content={description}/>
