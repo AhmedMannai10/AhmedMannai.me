@@ -14,7 +14,10 @@ export default function Home() {
 
     return (
         <>
-            <MetaTags />
+            <MetaTags 
+                title="Home | AhmedMannai" 
+                description="Personal Website for sharing my software engineering journey "
+            />
             <Hero />
             <About />
             <ProjectsSection />

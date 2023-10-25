@@ -25,10 +25,10 @@ const Hero = () => {
                     and I love engineering in general. obsessed with creating
                     things
                 </p>
-                <Link href="/subscribe">
-                    <a>
+                <Link href="/subscribe" className="cursor-pointer">
+                    <span>
                         <CtaButton name="Subscribe" />
-                    </a>
+                    </span>
                 </Link>
             </div>
             <div className="flex-1 flex md:justify-center  ">
@@ -40,6 +40,7 @@ const Hero = () => {
                         src={mypic}
                         alt="Ahmed Mannai picture"
                         layout="responsive"
+                        loading="lazy"
                     />
                 </div>
             </div>
