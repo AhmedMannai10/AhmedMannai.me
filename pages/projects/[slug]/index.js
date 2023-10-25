@@ -20,7 +20,7 @@ export async function getStaticProps({ params }) {
 
     return {
         props: { post },
-        revalidate: 5000,
+        revalidate: 100,
     };
 
 }
@@ -29,9 +29,9 @@ export async function getStaticPaths() {
 
     const snapshot = await getDocs(query(collectionGroup(firestore, 'projects')));
     const paths = snapshot.docs.map((doc) => {
-        const { slug, title } = doc.data();
+        const { slug } = doc.data();
         return {
-            params: { title, slug },
+            params: {  slug },
 
         };
     })
@@ -42,11 +42,6 @@ export async function getStaticPaths() {
         paths,
         fallback: 'blocking',
     };
-}
-const fetchCurrentProject = (data) => {
-    return data.find( item => {
-       return item.slug === "my-personal-website";
-   }) 
 }
 
 

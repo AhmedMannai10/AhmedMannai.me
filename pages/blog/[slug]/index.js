@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 
-    const snapshot = await getDocs(query(collectionGroup(firestore, 'projects')));
+    const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
     const paths = snapshot.docs.map((doc) => {
         const { slug } = doc.data();
         return {
@@ -49,17 +49,7 @@ export async function getStaticPaths() {
 
 const blogPost = (props) => {
 
-    const { data, error } = useSWR("api/blog-posts", fetcher);
-    // using swr
-    const listArticles = data;
-
-    const article = listArticles.filter((slug) => {
-        return listArticles.slug === slug;
-    });
     
-    console.log(article);
-
-
 
 
   const locationURL = `https://www.ahmedmannai.me${window.location.pathname}`;
