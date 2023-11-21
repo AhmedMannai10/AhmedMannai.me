@@ -65,7 +65,10 @@ export default function blog() {
                         })
                     ) : (
 
-                        <SkeletonLoadingCard />
+                        <>
+                            <SkeletonLoadingCard />
+                            <SkeletonLoadingCard />
+                        </>
                     )}
                 </div>
             </div>

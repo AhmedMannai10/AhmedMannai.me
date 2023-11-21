@@ -18,8 +18,7 @@ export default async (_, res) => {
         limit(LIMIT),
     );
 
-    const posts = (await getDocs(postsQuery)).docs.map(postToJson);
-    console.log(posts);
+    const projects = (await getDocs(postsQuery)).docs.map(postToJson);
 
-    res.status(200).json(posts);
+    res.status(200).json(projects);
 };
