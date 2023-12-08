@@ -1,0 +1,33 @@
+@config "../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @layer base{
+
+    @apply min-h-screen;
+    @apply font-ubuntu;
+    @apply bg-primary text-text_color;
+    body {
+        @apply dark: bg-dark_primary dark:dark_text_color;
+}
+} */
+
+/* prettier-ignore */
+
+body {
+    /* @apply dark: bg-dark_primary dark:dark_text_color; */
+    @apply min-h-screen font-ubuntu bg-primary text-text_color dark:bg-dark_primary dark:text-dark_text_color;
+
+
+}
+
+.upload-snippet {
+    width: 75%;
+    margin-left: auto;
+    background: white;
+    padding: 5px;
+    margin: 5px 0;
+}

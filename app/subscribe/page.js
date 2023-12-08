@@ -1,6 +1,5 @@
 import React from 'react'
-import NewsletterCard from '../components/NewsletterCard'
-import Header from '../sections/Header'
+import NewsletterCard from '../../components/NewsletterCard'
 
 export default function subscribe() {
   return (

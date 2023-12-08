@@ -1,15 +1,19 @@
+'use client'
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import CtaButton from "../components/CtaButton";
 import Link from "next/link";
-import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 import SkeletonLoadingCard from "../components/SkeletonLoadingCard";
+import useSWR, { SWRConfig } from "swr";
 
 export default function ProjectsSection() {
 
-    const { data, error } = useSWR("api/projects", fetcher);
-    // setProjectPosts(data);
+    const {data, error, isLoading} = useSWR("/api/projects", fetcher, { fallback: "Loading..." });
+
+    if(error){
+        return <div>failed to load</div>
+    }
     const projects = data;
 
 
@@ -31,31 +35,27 @@ export default function ProjectsSection() {
                 md:grid md:grid-cols-2 
             "
             >
-
-                {projects ? (
-                    (projects.slice(0, 2)).map((project) => {
-                        return (
-                            <ProjectCard
-                                img={project.img}
-                                title={project.title}
-                                desc={project.description}
-                                key={project.id}
-                                link={project.slug}
-                            />
-                        );
-                    })
-                ) : (
-                    <>
-                        <SkeletonLoadingCard/>
-                        <SkeletonLoadingCard/>
-                    </>
-                )}
+                {projects? (
+                projects.map((project) => (
+                    <ProjectCard
+                        img={project.img}
+                        title={project.title}
+                        desc={project.description}
+                        key={project.slug}
+                        link={project.slug}
+                    />
+                ))
+                
+            ) : (
+                <>
+                    <SkeletonLoadingCard />
+                    <SkeletonLoadingCard />
+                </>
+            )}
 
             </div>
             <Link href="/projects">
-                <a>
-                    <CtaButton name="See More" />
-                </a>
+                <CtaButton name="See More" />
             </Link>
         </div>
     );

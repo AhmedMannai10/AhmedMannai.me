@@ -10,47 +10,44 @@ import useSWR from "swr";
 import fetcher from "../../../utils/fetcher";
 
 
-export async function getStaticProps({ params }) {
+// export async function getStaticProps({ params }) {
 
-    const { slug } = params;
+//     const { slug } = params;
 
-    // const postRef = doc(firestore, 'projects', slug);
-    const postRef = doc(firestore, 'blog-posts', slug);
+//     // const postRef = doc(firestore, 'projects', slug);
+//     const postRef = doc(firestore, 'blog-posts', slug);
 
-    const postData = await getDoc(postRef);
-    const post = postToJson(postData);
+//     const postData = await getDoc(postRef);
+//     const post = postToJson(postData);
 
-    return {
-        props: { post },
-        revalidate: 10,
-    };
+//     return {
+//         props: { post },
+//         revalidate: 10,
+//     };
 
-}
+// }
 
-export async function getStaticPaths() {
+// export async function getStaticPaths() {
 
-    const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
-    const paths = snapshot.docs.map((doc) => {
-        const { slug } = doc.data();
-        return {
-            params: { slug },
+//     const snapshot = await getDocs(query(collectionGroup(firestore, 'blog-posts')));
+//     const paths = snapshot.docs.map((doc) => {
+//         const { slug } = doc.data();
+//         return {
+//             params: { slug },
 
-        };
-    })
+//         };
+//     })
 
-    return {
-        paths,
-        fallback: 'blocking',
-    };
-}
-
-
+//     return {
+//         paths,
+//         fallback: 'blocking',
+//     };
+// }
 
 
-const blogPost = (props) => {
 
-    
 
+const ArticlePage = () => {
 
   const locationURL = `https://www.ahmedmannai.me${window.location.pathname}`;
 

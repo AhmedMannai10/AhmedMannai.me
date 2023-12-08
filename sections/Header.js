@@ -1,3 +1,5 @@
+'use client'
+
 import { React, useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -24,9 +26,9 @@ const Header = () => {
                 <div
                     onClick={() => setTheme("light")}
                 >
-                <SunIcon
-                    className="sm:w-6 w-4 duration-300"
-                />
+                    <SunIcon
+                        className="sm:w-6 w-4 duration-300"
+                    />
                 </div>
             );
         } else {
@@ -35,14 +37,14 @@ const Header = () => {
 
                     onClick={() => setTheme("dark")}
                 >
-                <MoonIcon
-                    className="sm:w-5 w-3 duration-300"
-                />
-</div>
-            );       
+                    <MoonIcon
+                        className="sm:w-5 w-3 duration-300"
+                    />
+                </div>
+            );
         }
     };
-                
+
 
     return (
         <div
@@ -54,24 +56,18 @@ const Header = () => {
              md:h-20 h-16 md:px-14 px-4 shadow
              "
         >
-            <Link href="/" className="">
-                <a className="hover:text-dark_primary duration-300 dark:hover:text-white ">
-                    Ahmed Mannai
-                </a>
+            <Link href="/" className="hover:text-dark_primary duration-300 dark:hover:text-white ">
+                Ahmed Mannai
             </Link>
             <div className="flex flex-1 justify-end gap-7">
-                <Link href="/blog" >
-                    <a className="flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
-                        <FeatherIcon className=" w-4 md:w-6 pt-[1px] "/>
-                        Blog
-                    </a>
+                <Link href="/blog" className="flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white" >
+                    <FeatherIcon className=" w-4 md:w-6 pt-[1px] " />
+                    Blog
                 </Link>
 
-                <Link href="/projects">
-                    <a className="flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
-                        <CodeIcon className=" w-5 md:w-7 pt-[1px] "/>
-                        Projects
-                    </a>
+                <Link href="/projects" className="flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white">
+                    <CodeIcon className=" w-5 md:w-7 pt-[1px] " />
+                    Projects
                 </Link>
             </div>
             <span className=" pt-[1px] hover:text-dark_primary duration-300 dark:hover:text-white ml-6 ">

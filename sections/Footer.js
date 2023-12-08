@@ -11,25 +11,25 @@ const Footer = () => {
                         <ul className=" space-y-2">
                             <li>
                                 <Link href="/">
-                                    <a>Home</a>
+                                    Home
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/projects">
-                                    <a>Projects</a>
+                                    Projects
                                 </Link>
 
                             </li>
                             <li>
                                 <Link href="/blog">
-                                    <a>Blog</a>
+                                    Blog
                                 </Link>
 
                             </li>
                             <li>
 
                                 <Link href="/">
-                                    <a>Contact</a>
+                                    Contact
                                 </Link>
 
                             </li>

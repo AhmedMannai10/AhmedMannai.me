@@ -1,19 +1,16 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import CtaButton from "../components/CtaButton";
 import BlogCard from "../components/BlogCard";
-import useSWR from "swr";
+import useSWR, { SWRConfig } from "swr";
 import fetcher from "../utils/fetcher";
 import SkeletonLoadingCard from "../components/SkeletonLoadingCard";
 
 export default function BlogSection() {
 
-
-
-    const { data, error } = useSWR('api/blog-posts', fetcher);
-
-    const blogPosts = data;
-
+    const {data, error, isLoading} = useSWR("/api/articles", fetcher, { fallback: "Loading..." });
+    const articles = data;
     return (
         <div
             className="flex flex-col gap-10
@@ -30,37 +27,29 @@ export default function BlogSection() {
                 className="flex flex-col gap-10
                 md:grid md:grid-cols-2"
             >
+        {
 
-                {blogPosts ? (
-                    (blogPosts.slice(0, 2)).map((post) => {
-                        return (
-                            <BlogCard
-                                img={post.img}
-                                title={post.title}
-                                desc={post.description}
-                                key={post.slug}
-                                link={post.slug}
-                            />
-                        );
-                    }
-                    )
-
-                ) : (
-                    <>
-
-                    <SkeletonLoadingCard />
-                    <SkeletonLoadingCard/>
-                    </>
-
-                    
-                )}
-
-
+                articles ? (
+            articles.map((article) => {
+            return (
+                <BlogCard
+                    img={article.img}
+                    title={article.title}
+                    desc={article.description}
+                    key={article.slug}
+                    link={article.slug}
+                />
+            );
+        })
+    ) : (
+        <>
+            <SkeletonLoadingCard />
+            <SkeletonLoadingCard />
+        </>
+    )}
             </div>
             <Link href="/blog" className="">
-                <a>
-                    <CtaButton name="See More" />
-                </a>
+                <CtaButton name="See More" />
             </Link>
         </div>
     );
