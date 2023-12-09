@@ -42,7 +42,7 @@ function CreateNewPost() {
     if (isProject) {
         postType = "projects";
     } else {
-        postType = "articles"
+        postType = "blog-posts"
     }
 
     const createPost = async (e) => {

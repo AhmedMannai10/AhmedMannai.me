@@ -62,7 +62,7 @@ const AdminDashboard = (props) => {
                     )}
                 </div>
 
-                <div className="flex flex-col min-h-full pt-4 gap-10 md:px-20 px-5 ">
+                <div className="flex flex-col min-h-full pt-4 gap-10 md:px-20 px-5">
 
                     <h1 className="font-bold text-2xl md:text-3xl mt-10">
                         {isBlog ? "My Blog Posts" : "My Projects"}

@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }) {
                 <ReactMarkdown>{post.content}</ReactMarkdown>
               </div>
             </article>
-            <aside className=' pt-2 lg:pt-10 top-14 lg:sticky lg:h-full w-full lg:w-80'>
+            <aside className=' pt-2 lg:pt-10 top-14 lg:sticky lg:h-full w-full lg:w-52'>
               <div className='hidden lg:block'>
                 <SharePost
                   url={locationURL}

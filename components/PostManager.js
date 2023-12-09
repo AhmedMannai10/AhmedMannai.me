@@ -12,10 +12,9 @@ import PostTitle from './PostTitle';
 import ImageUploader from './ImageUploader';
 
 export default function PostManager({ postType, slug }) {
-    const [preview, setPreview] = useState(false);
 
+    const [preview, setPreview] = useState(false);
     const router = useRouter();
-    //const { slug } = router.query;
 
     const postRef = doc(firestore, postType, slug)
     const [post] = useDocumentDataOnce(postRef)

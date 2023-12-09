@@ -5,7 +5,6 @@ import { useAuth } from "../lib/adminAuth";
 import { useRouter } from "next/navigation";
 
 const AuthCheck  = (props) => {
-
     const {currentUser} = useAuth();
     const router = useRouter();
 
