@@ -39,12 +39,13 @@ const Header = () => {
   return (
     <div
       className='sticky top-0 z-50 bg-secondary
-             dark:bg-dark_secondary w-full  flex items-center
-            justify-between
-             font-bold text-lg md:text-2xl 
-             md:h-20 h-16 md:px-14 px-4 shadow
+             dark:bg-dark_secondary  
              '
     >
+      <div className="           font-bold text-xl md:text-2xl 
+             md:h-20 h-16 md:px-14  flex items-center
+            justify-between
+ mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <Link
         href='/'
         className='hover:text-dark_primary duration-300 dark:hover:text-white '
@@ -71,6 +72,7 @@ const Header = () => {
       <span className=' pt-[1px] hover:text-dark_primary duration-300 dark:hover:text-white ml-6 '>
         {renderThemeChanger()}
       </span>
+      </div>
     </div>
   );
 };
