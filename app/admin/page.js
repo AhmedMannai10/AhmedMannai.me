@@ -1,7 +1,7 @@
-
+'use client'
 import AdminDashboard from "../../components/AdminDashboard";
 import AuthCheck from "../../components/AuthCheck";
-import { useRouter } from "next/router";
+import {useRouter} from 'next/navigation';
 import { useState } from "react";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { firestore } from "../../lib/firebase";
@@ -28,7 +28,7 @@ export default function AdminPage() {
 
 
 function CreateNewPost() {
-    const router = useRouter();
+  const router = useRouter();
     const [title, setTitle] = useState("");
     const [isProject, setIsProject] = useState(false);
 
@@ -42,7 +42,7 @@ function CreateNewPost() {
     if (isProject) {
         postType = "projects";
     } else {
-        postType = "blog-posts"
+        postType = "articles"
     }
 
     const createPost = async (e) => {

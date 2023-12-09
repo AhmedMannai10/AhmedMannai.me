@@ -18,14 +18,17 @@ const About = () => {
 
             <p className="text-xl ">
 
-                Hello there, I, Ahmed Mannai, am a recent computer science graduate with a passion for software engineering.<br />
-                My studies and experience have honed my skills in programming languages, software design, and development methodologies.<br />
-                I focus on delivering high-quality solutions that meet both technical and business requirements, earning a reputation for my problem-solving skills, attention to detail.<br />
-                I was never the best at school or academily I am just a super curios guy with huge passion for software development.<br /><br />
-                As a proactive learner, I always seek new challenges to expand my knowledge and improve my skills.<br />
-                With a strong desire to make a positive impact in the industry, I am dedicated to staying up-to-date with the latest advancements and trends in software engineering.<br />
-                I bring expertise and enthusiasm to new projects and opportunities, eager to contribute to the development of innovative and impactful software solutions.
+            Greetings! I'm Ahmed Mannai, a Software Engineer fueled by an unwavering passion for software engineering.
 
+My journey through academia and hands-on experience has finely tuned my prowess in programming languages, software design, and development methodologies. I'm dedicated to crafting high-quality solutions that seamlessly align with both technical intricacies and business objectives, earning acclaim for my problem-solving finesse and meticulous attention to detail.
+
+Contrary to being a standout academic, I pride myself on being an endlessly curious individual with an insatiable appetite for software development. I've discovered that my true strength lies in my ability to navigate and conquer challenges with an open mind.
+
+A perpetual learner at heart, I actively seek fresh challenges to continually expand my knowledge and elevate my skill set. Motivated by a desire to leave a positive imprint on the industry, I'm committed to keeping abreast of the latest advancements and trends in software engineering.
+
+Approaching each endeavor with a blend of expertise and infectious enthusiasm, I am poised to contribute meaningfully to new projects and opportunities. Eager to play a pivotal role in shaping innovative and impactful software solutions, I bring a unique blend of expertise and genuine passion to the table.
+
+Let's embark on a journey of innovation and excellence together.
 
             </p>
 

@@ -7,7 +7,7 @@ import fetcher from "../utils/fetcher";
 import SkeletonLoadingCard from "../components/SkeletonLoadingCard";
 import useSWR, { SWRConfig } from "swr";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({params}) {
 
     const {data, error, isLoading} = useSWR("/api/projects", fetcher, { fallback: "Loading..." });
 
@@ -36,7 +36,8 @@ export default function ProjectsSection() {
             "
             >
                 {projects? (
-                projects.map((project) => (
+                    
+                (projects.slice(0,2)).map((project) => (
                     <ProjectCard
                         img={project.img}
                         title={project.title}
@@ -44,12 +45,15 @@ export default function ProjectsSection() {
                         key={project.slug}
                         link={project.slug}
                     />
+
                 ))
+
                 
             ) : (
                 <>
                     <SkeletonLoadingCard />
                     <SkeletonLoadingCard />
+                    
                 </>
             )}
 

@@ -16,9 +16,10 @@ const AdminDashboard = (props) => {
     const changeEditSection = () => {
         isBlog ? setIsBlog(false) : setIsBlog(true);
     };
+     
 
     const { data, error } = useSWR(
-        isBlog ? "api/blog-posts" : "api/projects",
+        isBlog ? "api/articles" : "api/projects",
         fetcher
     );
 
@@ -103,15 +104,13 @@ const AdminDashboard = (props) => {
                                                         href={
                                                             "admin" +
                                                             (isBlog
-                                                                ? "/blog-posts/" + element.slug
+                                                                ? "/articles/" + element.slug
                                                                 : "/projects/" + element.slug)
                                                         }
                                                     >
-                                                        <a>
                                                             <span className=" bg-green-500">
                                                                 Edit
                                                             </span>
-                                                        </a>
                                                     </Link>
                                                 </td>
                                             </tr>

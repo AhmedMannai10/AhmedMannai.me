@@ -1,7 +1,8 @@
+'use client'
 import Link from "next/link";
 import AdminLogin from "./AdminLogin";
 import { useAuth } from "../lib/adminAuth";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const AuthCheck  = (props) => {
 

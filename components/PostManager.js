@@ -1,5 +1,6 @@
+'use client'
 import React from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { firestore } from '../lib/firebase';
 import { doc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
@@ -10,27 +11,23 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import PostTitle from './PostTitle';
 import ImageUploader from './ImageUploader';
 
-export default function PostManager({ postType }) {
-
-
+export default function PostManager({ postType, slug }) {
     const [preview, setPreview] = useState(false);
 
     const router = useRouter();
-    const { slug } = router.query;
+    //const { slug } = router.query;
 
     const postRef = doc(firestore, postType, slug)
     const [post] = useDocumentDataOnce(postRef)
 
-    console.log(postType);
 
 
     return (
 
-        <main className=' mt-5'>
+        <main className=' mt-5 w-full h-full'>
             {post && (
                 <>
                     <PostTitle title={post.title} publichedDate={post.publichedDate} />
-                    {/* <EditPostLayout> */}
                     <div className=' mx-auto flex flex-col-reverse justify-evenly lg:flex-row lg:gap-6 lg:px-0 mb-8'>
                         <section className=' flex-1 gray-300 px-4 lg:max-w-5xl lg:mx-auto'>
 

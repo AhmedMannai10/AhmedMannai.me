@@ -8,6 +8,7 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
         "./sections/**/*.{js,ts,jsx,tsx}",
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
 
 
@@ -16,6 +17,7 @@ module.exports = {
             fontFamily: {
                 ubuntu: ["Ubuntu"],
                 inter: ["Inter"],
+                sfpro: ["SF Pro"],
             },
 
 
@@ -63,9 +65,7 @@ module.exports = {
         },
 
     },
-    variants: {
-        typography: ['dark']
-    },
+  
 
     plugins: [require('@tailwindcss/typography')],
 };
