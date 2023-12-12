@@ -11,7 +11,7 @@ export default function SharePost({ url, title, desc }) {
       <div className='m-0 flex items-center justify-center gap-4'>
         <LinkedinShareButton
           url={url}
-          source='https://www.ahmedmannai.me'
+          source={url}
           title={title}
           summary={desc}
         >

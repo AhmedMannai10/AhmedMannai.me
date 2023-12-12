@@ -39,39 +39,39 @@ const Header = () => {
   return (
     <div
       className='sticky top-0 z-50 bg-secondary
-             dark:bg-dark_secondary  
+             dark:bg-dark_secondary  font-ubuntu
              '
     >
       <div className="           font-bold text-xl md:text-2xl 
              md:h-20 h-16 md:px-14  flex items-center
             justify-between
- mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <Link
-        href='/'
-        className='hover:text-dark_primary duration-300 dark:hover:text-white '
-      >
-        Ahmed Mannai
-      </Link>
-      <div className='flex flex-1 justify-end gap-7'>
+          mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <Link
-          href='/blog'
-          className='flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
+          href='/'
+          className='hover:text-dark_primary duration-300 dark:hover:text-white '
         >
-          <FeatherIcon className=' w-4 md:w-6 pt-[1px] ' />
-          Blog
+          Ahmed Mannai
         </Link>
+        <div className='flex flex-1 justify-end gap-7'>
+          <Link
+            href='/blog'
+            className='flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
+          >
+            <FeatherIcon className=' w-4 md:w-6 pt-[1px] ' />
+            Blog
+          </Link>
 
-        <Link
-          href='/projects'
-          className='flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
-        >
-          <CodeIcon className=' w-5 md:w-7 pt-[1px] ' />
-          Projects
-        </Link>
-      </div>
-      <span className=' pt-[1px] hover:text-dark_primary duration-300 dark:hover:text-white ml-6 '>
-        {renderThemeChanger()}
-      </span>
+          <Link
+            href='/projects'
+            className='flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
+          >
+            <CodeIcon className=' w-5 md:w-7 pt-[1px] ' />
+            Projects
+          </Link>
+        </div>
+        <span className=' pt-[1px] hover:text-dark_primary duration-300 dark:hover:text-white ml-6 '>
+          {renderThemeChanger()}
+        </span>
       </div>
     </div>
   );

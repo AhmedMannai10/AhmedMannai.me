@@ -1,75 +1,38 @@
-'use client'
-import { React, useState } from "react";
-import BlogCard from "../../components/BlogCard.js";
+import { React } from "react";
+import Articles from "./Articles";
 
-import SkeletonLoadingCard from "../../components/SkeletonLoadingCard.js";
-
-import fetcher from "../../utils/fetcher.js";
-import useSWR, { SWRConfig } from "swr";
-
-
-export const medtadata = {
-    title: "Projects",
+export const metadata = {
+  title: "Blog",
+  description: "My latest articles, talking about what I am working on, and documenting my journey",
 }
-function Articles() {
-    // `data` will always be available as it's in `fallback`.
+export default function Page() {
 
 
-
-    const {data, error, isLoading} = useSWR("/api/articles", fetcher, { fallback: "Loading..." });
-    const articles = data;
-
-    return (
-        <>
-            {articles ? (
-                articles.map((article) => (
-                    <BlogCard
-                        img={article.img}
-                        title={article.title}
-                        desc={article.description}
-                        key={article.slug}
-                        link={article.slug}
-                    />
-                ))
-            ) : (
-                <>
-                    <SkeletonLoadingCard />
-                    <SkeletonLoadingCard />
-                </>
-            )}
-        </>
-    );
-}
+  return (
+    <main >
 
 
-export default function Page({fallback}) {
-
-
-    return (
-        <main >
-           
-              
- <div className='space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 dark:border-b-gray-700
+      <div className='space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 dark:border-b-gray-700
           border-b-gray-400 py-8'>
         <h1
           className='dark:text-dark_h_color text-h_color font-bold
                     sm:my-2 text-4xl 
             leading-9 tracking-tight sm:text-6xl sm:leading-10 md:text-6xl md:leading-14'
         >
-          Blog 
+          Blog
         </h1>
 
         <h3 className='dark:text-gray-300 text-gray-600 text-xl'>
-            My latest articles
+          My latest articles
         </h3>
 
-        </div>             
+      </div>
 
-            <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">
-                <div className="flex flex-col gap-10 md:grid md:grid-cols-2 ">
-                    <Articles/>
-               </div>
-            </div>
-        </main>
-    );
+      <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">
+        <div className="flex flex-col gap-10 md:grid md:grid-cols-2 ">
+          <Articles />
+        </div>
+      </div>
+    </main>
+  );
 }

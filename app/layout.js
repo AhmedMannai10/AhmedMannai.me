@@ -5,6 +5,8 @@ import Script from "next/script";
 import Header from "../sections/Header";
 import Footer from "../sections/Footer";
 import { Providers } from "./Theme/Providers";
+import myPic from "../assests/imgs/Ahmed_image_w.png";
+import coverPic from "../assests/imgs/ahmedmannai_cover_img.jpeg";
 
 export const metadata = {
   title: {
@@ -12,7 +14,31 @@ export const metadata = {
     default: "Ahmed Mannai", // a default is required when creating a template
     description:
       "Hello there, I, Ahmed Mannai, am software engineer join me for fun coding adventure",
-    img: "https://ahmedmannai.me/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fahmed-mannai.appspot.com%2Fo%2Fuploads%252F1675363540779.jpeg%3Falt%3Dmedia%26token%3D56790d52-2d1b-42d4-a39a-99c89c661b07&w=1920&q=75",
+    img: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
+  },
+  openGraph: {
+    title: 'Ahmed Mannai',
+    description: "Hello there, I, Ahmed Mannai, am software engineer join me for fun coding adventure",
+    url: 'https://ahmedmannai.me',
+    siteName: 'Ahmed.Mannai',
+    images: [
+      {
+
+        url: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
+        width: 1800,
+        height: 1600,
+        alt: "Ahmed Mannai LOGO"
+      },
+      {
+        url: "https://ahmedmannai.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FAhmed_image_w.7dbc8512.png&w=1920&q=75",
+        width: 800,
+        height: 600,
+        alt: "Ahmed Mannai Picture"
+      },
+
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
 };
 
@@ -38,11 +64,12 @@ export default function RootLayout({ children }) {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap'
           rel='stylesheet'
         />
-
         <link
-          rel='icon'
-          type='image/x-icon'
-          href='/ahmedIcon.png'
+
+          rel="icon"
+          href="/icon.png"
+          type="image/png"
+          sizes="png"
         />
       </Head>
 
@@ -67,7 +94,7 @@ export default function RootLayout({ children }) {
           </Script>
           <Providers>
             <Header />
-            <section className='flex flex-col gap-6 items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0'>
+            <section className='flex flex-col gap-6 items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 font-ubuntu'>
               {children}
               <Footer />
             </section>
