@@ -22,7 +22,6 @@ export default function HireMe() {
       alert("Please verify the recaptcha!");
     }
 
-    console.log(email, firstName, lastName, subject, message);
     try {
       sendEmail({
         firstName: firstName,
@@ -86,7 +85,7 @@ export default function HireMe() {
           </button>
         </form>
         {messageSent && <p className="block mb-2 text-xl dark:text-dark_h_color text-h_color font-medium">
-          Thanks so much for getting in touch! I've received your message and will be in touch soon. 😊
+          Thanks so much for getting in touch! I have received your message and will be in touch soon. 😊
         </p>}
       </section>
     </main>
