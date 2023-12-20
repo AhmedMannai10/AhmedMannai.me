@@ -25,9 +25,10 @@ export const metadata = {
       "Hello there, I, Ahmed Mannai, am software engineer join me for fun coding adventure",
     img: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
   },
+  description: "I\'m Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let\'s geek out over all things software together! Welcome aboard!",
   openGraph: {
     title: 'Ahmed Mannai',
-    description: "Hello there, I, Ahmed Mannai, am software engineer join me for fun coding adventure",
+    description: "I\'m Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let\'s geek out over all things software together! Welcome aboard!",
     url: 'https://ahmedmannai.me',
     siteName: 'Ahmed.Mannai',
     images: [
@@ -39,7 +40,7 @@ export const metadata = {
         alt: "Ahmed Mannai LOGO"
       },
       {
-        url: "https://ahmedmannai.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FAhmed_image_w.7dbc8512.png&w=1920&q=75",
+        url: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
         width: 800,
         height: 600,
         alt: "Ahmed Mannai Picture"
