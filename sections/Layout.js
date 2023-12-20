@@ -4,7 +4,7 @@ import Header from "./Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <html>
+      <div>
         <Header />
 
         <main className="flex flex-col gap-20 px-4 py-2 md:px-10 min-h-screen ">
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
           <h1>hello there</h1>
         </main>
         <Footer />
-      </html>
+      </div>
     </>
   );
 };

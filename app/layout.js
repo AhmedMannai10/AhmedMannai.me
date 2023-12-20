@@ -1,15 +1,24 @@
 import { AuthProvider } from "../lib/adminAuth";
 import "./globals.css";
+import styles from "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
 import Header from "../sections/Header";
 import Footer from "../sections/Footer";
 import { Providers } from "./Theme/Providers";
+import { Ubuntu, Inter } from "next/font/google";
 import myPic from "../assests/imgs/Ahmed_image_w.png";
 import coverPic from "../assests/imgs/ahmedmannai_cover_img.jpeg";
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 export const metadata = {
   title: {
+    weight: ["300", "400", "500", "700"],
     template: "%s | Ahmed Mannai",
     default: "Ahmed Mannai", // a default is required when creating a template
     description:
@@ -46,14 +55,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      className='scroll-smooth '
+      className='scroll-smooth font-inter'
       dark-theme="light"
+
     >
       <Head>
         <link
           rel='preconnect'
-          href='https://fonts.googleapis.com'
-        />
+          href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
@@ -73,7 +82,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
 
-      <body>
+      <body className="">
         <AuthProvider>
           <Script
             strategy='afterInteractive'

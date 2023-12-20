@@ -39,8 +39,7 @@ const Header = () => {
   return (
     <div
       className='sticky top-0 z-50 bg-secondary
-             dark:bg-dark_secondary  font-ubuntu
-             '
+             dark:bg-dark_secondary shadow-md '
     >
       <div className="           font-bold text-xl md:text-2xl 
              md:h-20 h-16 md:px-14  flex items-center

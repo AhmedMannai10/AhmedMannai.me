@@ -26,4 +26,3 @@ const nextConfig = {
 
 
 module.exports = withMDX(nextConfig)
-nextConfig
