@@ -5,16 +5,16 @@ import Head from "next/head";
 import Script from "next/script";
 import Header from "../sections/Header";
 import Footer from "../sections/Footer";
-import { Providers } from "./Theme/Providers";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Ubuntu, Inter } from "next/font/google";
 import myPic from "../assests/imgs/Ahmed_image_w.png";
 import coverPic from "../assests/imgs/ahmedmannai_cover_img.jpeg";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata = {
   title: {
@@ -25,75 +25,59 @@ export const metadata = {
       "Hello there, I, Ahmed Mannai, am software engineer join me for fun coding adventure",
     img: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
   },
-  description: "I\'m Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let\'s geek out over all things software together! Welcome aboard!",
+  description:
+    "I'm Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let's geek out over all things software together! Welcome aboard!",
   openGraph: {
-    title: 'Ahmed Mannai',
-    description: "I\'m Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let\'s geek out over all things software together! Welcome aboard!",
-    url: 'https://ahmedmannai.me',
-    siteName: 'Ahmed.Mannai',
+    title: "Ahmed Mannai",
+    description:
+      "I'm Ahmed Mannai, a software enthusiast on a coding adventure. Explore my latest projects, enjoy regular articles, and let's geek out over all things software together! Welcome aboard!",
+    url: "https://ahmedmannai.me",
+    siteName: "Ahmed.Mannai",
     images: [
       {
-
         url: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
         width: 1800,
         height: 1600,
-        alt: "Ahmed Mannai LOGO"
+        alt: "Ahmed Mannai LOGO",
       },
       {
         url: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
         width: 800,
         height: 600,
-        alt: "Ahmed Mannai Picture"
+        alt: "Ahmed Mannai Picture",
       },
-
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang='en'
-      className='scroll-smooth font-inter'
-      dark-theme="light"
-
-    >
+    <html lang="en" className="scroll-smooth font-inter" dark-theme="light">
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          rel='preconnect'
-          href='https://fonts.googleapis.com' />
-        <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-          crossOrigin='true'
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
         />
 
         <link
-          href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+          rel="stylesheet"
         />
-        <link
-
-          rel="icon"
-          href="/icon.png"
-          type="image/png"
-          sizes="png"
-        />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="png" />
       </Head>
 
       <body className="">
         <AuthProvider>
           <Script
-            strategy='afterInteractive'
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENTID}`}
           />
 
-          <Script
-            id='google-analytics'
-            strategy='afterInteractive'
-          >
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
@@ -102,13 +86,18 @@ export default function RootLayout({ children }) {
 
                     `}
           </Script>
-          <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem={true}
+            disableTransitionOnChange
+          >
             <Header />
-            <section className='flex flex-col gap-6 items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 font-ubuntu'>
+            <section className="flex flex-col gap-6 items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 font-ubuntu">
               {children}
               <Footer />
             </section>
-          </Providers>
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>
