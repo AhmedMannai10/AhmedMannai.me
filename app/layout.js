@@ -3,8 +3,8 @@ import "./globals.css";
 import styles from "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
-import Header from "../sections/Header";
-import Footer from "../sections/Footer";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Ubuntu, Inter } from "next/font/google";
 import myPic from "../assests/imgs/Ahmed_image_w.png";
@@ -54,7 +54,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth font-inter" dark-theme="light">
+    <html lang="en" className="scroll-smooth " dark-theme="light">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.png" type="image/png" sizes="png" />
       </Head>
 
-      <body className="">
+      <body className=" min-h-screen bg-background font-sans antialiased">
         <AuthProvider>
           <Script
             strategy="afterInteractive"
@@ -93,10 +93,10 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             <Header />
-            <section className="flex flex-col gap-6 items-center mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 font-ubuntu">
-              {children}
-              <Footer />
-            </section>
+            <main className="flex-1">
+              <div className="container relative ">{children}</div>
+            </main>
+            <Footer />
           </ThemeProvider>
         </AuthProvider>
       </body>

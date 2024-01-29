@@ -2,12 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 
 const About = () => {
   return (
-    <div
-      className="flex flex-col gap-4 bg-secondary 
-             dark:bg-dark_secondary md:mx-10 sm:mx-5 mx-2 sm:p-8 p-2 
-        rounded-md shadow-lg 
-     "
-    >
+    <section className="flex flex-col gap-4">
       <h2
         className="dark:text-dark_h_color 
                     text-h_color font-semibold
@@ -45,7 +40,7 @@ const About = () => {
         desc="there"
         link="https://www.ahmedmannai.me"
       />
-    </div>
+    </section>
   );
 };
 
