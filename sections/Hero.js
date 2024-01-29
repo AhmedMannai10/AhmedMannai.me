@@ -5,8 +5,10 @@ import CtaButton from "../components/CtaButton";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col gap-6 md:flex-row  
-        justify-center md:mt-10 sm:m-5 m-3 md:px-10  ">
+    <div
+      className="flex flex-col gap-6 md:flex-row  
+        justify-center md:mt-10 sm:m-5 m-3 md:px-10  "
+    >
       <div
         className="flex-1 flex flex-col gap-6 pt-6 justify-center
                 md:gap-10 md:pt-0
@@ -21,17 +23,13 @@ const Hero = () => {
           Ahmed Mannai
         </h1>
         <p className="text-xl  md:text-2xl">
-          Passionate software developer dedicated to engineering excellence and driven by the joy of creating innovative solutions.
+          Passionate software developer dedicated to engineering excellence and
+          driven by the joy of creating innovative solutions.
         </p>
         <div className="flex gap-4 w-full">
-          {/*<Link href="/subscribe" className="cursor-pointe flex bg-bg_btn text-white 
-        text-2xl rounded-xl w-fit
-     h-14 justify-center items-center duration-300 
-      px-5 cursor-pointer"
-          >
-            Subscribe
-          </Link>*/}
-          <Link href="/hireme" className="cursor-pointe flex 
+          <Link
+            href="/hireme"
+            className="cursor-pointe flex 
                                             border-bg-bg_btn  dark:text-dark_primary 
                 hover:bg-opacity-90 dark:bg-[#ededed] border-2  border-dark_primary 
             dark:border-primary text-white bg-dark_secondary 

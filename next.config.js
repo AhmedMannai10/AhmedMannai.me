@@ -1,28 +1,16 @@
 /** @type {import('next').NextConfig} */
 
-const withMDX = require('@next/mdx')({
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
-
-})
-
+});
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
-  "baseUrl": "./",
-  "@/components/*": ["components/*"],
-  "@/lib/*": ["lib/*"],
-  "@/utils/*": ["utils/*"],
-
+  pageExtensions: ["js", "jsx", "md", "mdx"],
   images: {
-    domains: [
-      'firebasestorage.googleapis.com'
-    ]
+    domains: ["firebasestorage.googleapis.com"],
   },
+};
 
-
-}
-
-
-module.exports = withMDX(nextConfig)
+module.exports = withMDX(nextConfig);

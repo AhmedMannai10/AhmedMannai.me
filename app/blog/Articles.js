@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { React, useState } from "react";
 import BlogCard from "../../components/BlogCard.js";
 
@@ -7,9 +7,11 @@ import SkeletonLoadingCard from "../../components/SkeletonLoadingCard.js";
 import fetcher from "../../utils/fetcher.js";
 import useSWR from "swr";
 
-export default function Articles() {
-  const { data, error, isLoading } = useSWR("/api/articles", fetcher, { fallback: "Loading..." });
-  const articles = data;
+export default function Articles({ posts }) {
+  const { data, error, isLoading } = useSWR("/api/articles", fetcher, {
+    fallback: "Loading...",
+  });
+  const articles = posts;
 
   return (
     <>
@@ -32,5 +34,3 @@ export default function Articles() {
     </>
   );
 }
-
-

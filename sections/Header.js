@@ -41,20 +41,20 @@ const Header = () => {
       className='sticky top-0 z-50 bg-secondary
              dark:bg-dark_secondary shadow-md '
     >
-      <div className="           font-bold text-xl md:text-2xl 
-             md:h-20 h-16 md:px-14  flex items-center
+      <div className="           font-bold text-lg md:text-xl lg:text-2xl
+             h-16  flex items-center
             justify-between
-          mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          mx-auto max-w-3xl px-2 sm:px-6 xl:max-w-5xl xl:px-0">
         <Link
           href='/'
           className='hover:text-dark_primary duration-300 dark:hover:text-white '
         >
           Ahmed Mannai
         </Link>
-        <div className='flex flex-1 justify-end gap-7'>
+        <div className='flex flex-1 justify-end gap-4 sm:gap-7'>
           <Link
             href='/blog'
-            className='flex gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
+            className='flex gap-1 sm:gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
           >
             <FeatherIcon className=' w-4 md:w-6 pt-[1px] ' />
             Blog
@@ -62,7 +62,7 @@ const Header = () => {
 
           <Link
             href='/projects'
-            className='flex justify-between gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
+            className='flex justify-between gap-1 sm:gap-2 items-center hover:text-dark_primary duration-300 dark:hover:text-white'
           >
             <CodeIcon className=' w-5 md:w-7 pt-[1px] ' />
             Projects
