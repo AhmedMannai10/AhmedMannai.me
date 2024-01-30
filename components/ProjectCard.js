@@ -2,47 +2,38 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import TagCard from "../components/TagCard";
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardContent,
+  CardTitle,
+  CardFooter,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectCard({ img, title, desc, tags, link }) {
-    const tagItems = String(tags).split(" ");
-    const stringLink = String(link);
-    return (
-        <Link href={`/projects/${stringLink}`}>
+  const tagItems = String(tags).split(" ");
+  const stringLink = String(link);
+  return (
+    <Card className=" w-full lg:flex border-2 rounded-xl overflow-hidden h-full">
+      <Image
+        src={img}
+        alt={`pic ${title}`}
+        width={700}
+        height={600}
+        className=" h-48 lg:h-auto lg:w-60 flex-none object-cover
+        rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+      />
+      <CardHeader>
+        <CardTitle>
+          <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+            {title}
+          </h4>
+        </CardTitle>
 
-
-            <div
-                className="flex flex-col bg-secondary
-              dark:bg-dark_secondary  max-w-sm md:min-w-[300px]
-                rounded-md shadow-lg 
-                hover:-translate-y-[4px] duration-300 ease-out
-                hover:cursor-pointer"
-            >
-                <div className="p-2">
-                    <div
-                        className="rounded-t-md relative min-h-[250px]"
-                    >
-                        <Image
-                            loading="lazy"
-                            src={img}
-                            alt={`${title} project image`}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded-md"
-                        />
-                    </div>
-                </div>
-                <div className="p-4 ">
-                    <h4
-                        className="dark:text-dark_h_color 
-                    text-h_color font-semibold
-                    text-xl  mb-2 uppercase"
-                    >
-                        {title}
-                    </h4>
-                    <p className=" text-lg my-2">{desc}</p>
-                </div>
-            </div>
-
-        </Link>
-    );
+        <p class=" leading-7 [&:not(:first-child)]:mt-6">{desc}</p>
+      </CardHeader>
+    </Card>
+  );
 }

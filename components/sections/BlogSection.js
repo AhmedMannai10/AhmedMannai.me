@@ -25,11 +25,11 @@ export default function BlogSection() {
         Featured Blog Posts
       </h2>
       <div
-        className="flex flex-col gap-10
-                md:grid md:grid-cols-2"
+        className="grid gap-10
+                md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
       >
         {articles ? (
-          articles.slice(0, 2).map((article) => {
+          articles.slice(0, 3).map((article) => {
             return (
               <BlogCard
                 img={article.img}

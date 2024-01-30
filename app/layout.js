@@ -7,8 +7,8 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Ubuntu, Inter } from "next/font/google";
-import myPic from "../assests/imgs/Ahmed_image_w.png";
-import coverPic from "../assests/imgs/ahmedmannai_cover_img.jpeg";
+import myPic from "../assets/imgs/Ahmed_image_w.png";
+import coverPic from "../assets/imgs/ahmedmannai_cover_img.jpeg";
 
 const inter = Inter({
   subsets: ["latin"],

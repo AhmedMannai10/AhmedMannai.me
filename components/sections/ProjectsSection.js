@@ -6,6 +6,13 @@ import Link from "next/link";
 import fetcher from "@/utils/fetcher";
 import SkeletonLoadingCard from "@/components/SkeletonLoadingCard";
 import useSWR, { SWRConfig } from "swr";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 export default function ProjectsSection({ params }) {
   const { data, error, isLoading } = useSWR("/api/projects", fetcher, {
@@ -18,26 +25,20 @@ export default function ProjectsSection({ params }) {
   const projects = data;
 
   return (
-    <div
+    <section
       className="flex flex-col gap-10
-            items-center "
+            items-center 
+      mx-8
+      "
     >
-      <h2
-        className="dark:text-dark_h_color 
-                    text-h_color font-semibold
-                    text-3xl my-2 uppercase"
-      >
-        Featured Projects
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        Projects
       </h2>
-      <div
-        className=" flex flex-col gap-10
-                md:grid md:grid-cols-2 
-            "
-      >
-        {projects ? (
-          projects
-            .slice(0, 2)
-            .map((project) => (
+
+      <Carousel className="w-full lg:max-w-4xl ">
+        <CarouselContent className="">
+          {projects?.slice(0, 3).map((project) => (
+            <CarouselItem key={project.slug} className="   md:basis-3/5">
               <ProjectCard
                 img={project.img}
                 title={project.title}
@@ -45,17 +46,12 @@ export default function ProjectsSection({ params }) {
                 key={project.slug}
                 link={project.slug}
               />
-            ))
-        ) : (
-          <>
-            <SkeletonLoadingCard />
-            <SkeletonLoadingCard />
-          </>
-        )}
-      </div>
-      <Link href="/projects">
-        <CtaButton name="See More" />
-      </Link>
-    </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </section>
   );
 }

@@ -4,8 +4,22 @@ import { React, useState, useEffect } from "react";
 import ModeToggle from "@/components/mode-toggle";
 import MainNav from "@/components/main-nav";
 import Search from "@/components/search";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Header = () => {
+  const [mobileNavOpen, setMobileNavOpen] = useState(true);
+
   return (
     <div className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div
@@ -13,47 +27,76 @@ const Header = () => {
             container flex h-14 max-w-screen-2xl items-center "
       >
         <MainNav className="mr-4 hidden md:flex" />
-        <div className=" md:hidden flex">
-          <button
-            className=" md:hidden inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-            type="button"
-            aria-haspopup="dialog"
-            aria-expanded="false"
-            aria-controls="radix-:R96la:"
-            data-state="closed"
-          >
-            <svg
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-            >
-              <path
-                d="M3 5H11"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M3 12H16"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-              <path
-                d="M3 19H21"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span class="sr-only">Toggle Menu</span>
-          </button>
-        </div>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="none" className=" md:hidden flex">
+              <button
+                className=" md:hidden inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-9 py-2 mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                type="button"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="radix-:R96la:"
+                data-state="closed"
+              >
+                <svg
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                >
+                  <path
+                    d="M3 5H11"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M3 12H16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M3 19H21"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left">
+            <SheetHeader>
+              <SheetTitle>Edit profile</SheetTitle>
+              <SheetDescription>
+                Make changes to your profile here. Click save when you're done.
+              </SheetDescription>
+            </SheetHeader>
+
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                Name
+                <Input id="name" value="Pedro Duarte" className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                Username
+                <Input id="username" value="@peduarte" className="col-span-3" />
+              </div>
+            </div>
+            <SheetFooter>
+              <SheetClose asChild>
+                <Button type="submit">Save changes</Button>
+              </SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <Search />
           <nav class="flex items-center">
