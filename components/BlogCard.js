@@ -9,39 +9,56 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function BlogCard({ img, title, desc, link }) {
   return (
-    <Link href={`/blog/${link} `}>
-      <Card className=" relative flex flex-col min-w-0 break-words border-0 shadow-soft-xl rounded-2xl bg-clip-border">
-        <CardHeader className=" relative  m-3 min-h-[230px] ">
+    <Link href={`/blog/${link} `} className="max-w-[300px] ">
+      <div
+        class="relative  flex-col min-w-0 break-words  rounded-2xl bg-clip-border  hover:shadow-xl hover:shadow-soft-xl p-2 border 
+hover:-translate-y-[4px] duration-300 ease-out  pb-4
+hover:border-secondary-foreground hover:border
+        "
+      >
+        <div className=" relative h-48 ">
           <Image
             src={img}
             alt={`pic ${title}`}
-            className=" rounded-xl  shadow-soft-2xl  "
-            objectFit="cover"
-            layout="fill"
+            fill
+            className=" h-48  flex-none object-cover
+         text-center overflow-hidden
+        shadow-xl shdow-soft-xl rounded-2xl
+              "
           />
-        </CardHeader>
-        <CardContent>
-          <CardTitle>
-            <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-              {title}
-            </h4>
-          </CardTitle>
-          <CardDescription>
-            <p class="mb-6 leading-normal text-sm">{desc}</p>
-          </CardDescription>
+        </div>
+
+        <div class="flex-auto px-1 pt-6">
+          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+            {title}
+          </h4>
+          <p class="mb-6 leading-normal text-sm">{desc}</p>
           <div class="flex items-center justify-between">
-            <button
-              type="button"
-              class="inline-block px-8 py-2 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro ease-soft-in text-xs"
-            >
-              View Project
-            </button>
+            <Button type="button">
+              Read More
+              <svg
+                className="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </Button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </Link>
   );
 }

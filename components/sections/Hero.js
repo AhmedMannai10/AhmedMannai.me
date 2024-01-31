@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20  ">
+    <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 pt-8   ">
       <div
         className="flex-1 flex flex-col pt-6 justify-center
         md:pt-0 items-center
@@ -39,7 +39,7 @@ const Hero = () => {
         </span>
         <div className=" mt-4 flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
           <Link
-            href="/hireme"
+            href="/contact"
             className=" cursor-pointe flex 
             hover:bg-opacity-80  border-2  border-dark_primary 
             rounded-lg w-fit 
@@ -49,8 +49,8 @@ const Hero = () => {
           >
             Connect
           </Link>
-          <Link href="/hireme">
-            <Button>Hire Me</Button>
+          <Link href="/contact">
+            <Button>Resume</Button>
           </Link>
         </div>
       </div>

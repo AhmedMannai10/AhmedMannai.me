@@ -26,19 +26,21 @@ export default function ProjectsSection({ params }) {
 
   return (
     <section
-      className="flex flex-col gap-10
-            items-center 
-      mx-8
-      "
+      className="flex flex-col 
+    lg:mx-auto  max-w-[980px]  items-center gap-6 pt-8 mx-8  "
     >
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         Projects
       </h2>
-
-      <Carousel className="w-full lg:max-w-4xl ">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className="w-full lg:max-w-4xl "
+      >
         <CarouselContent className="">
           {projects?.slice(0, 3).map((project) => (
-            <CarouselItem key={project.slug} className="   md:basis-3/5">
+            <CarouselItem key={project.slug} className="   md:basis-1/2">
               <ProjectCard
                 img={project.img}
                 title={project.title}

@@ -7,10 +7,10 @@ import MetaTags from "../components/MetaTags";
 import Footer from "../components/sections/Footer";
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-10">
       <Hero />
       <ProjectsSection />
       <BlogSection />
-    </>
+    </div>
   );
 }

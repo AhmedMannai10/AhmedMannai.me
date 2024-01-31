@@ -14,19 +14,15 @@ export default function BlogSection() {
   const articles = data;
   return (
     <div
-      className="flex flex-col gap-10
-            items-center "
+      className="flex flex-col
+            items-center gap-6 justify-center"
     >
-      <h2
-        className="dark:text-dark_h_color 
-                    text-h_color font-semibold
-                    text-3xl my-2 uppercase"
-      >
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         Featured Blog Posts
       </h2>
       <div
         className="grid gap-10
-                md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+                 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
       >
         {articles ? (
           articles.slice(0, 3).map((article) => {
@@ -47,9 +43,6 @@ export default function BlogSection() {
           </>
         )}
       </div>
-      <Link href="/blog" className="">
-        <CtaButton name="See More" />
-      </Link>
     </div>
   );
 }

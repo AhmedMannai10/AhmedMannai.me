@@ -34,7 +34,7 @@ export default function MainNav({ className, ...props }) {
         About Me
       </Link>
       <Link
-        href="/hireme"
+        href="/contact"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Contact

@@ -11,29 +11,39 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function ProjectCard({ img, title, desc, tags, link }) {
   const tagItems = String(tags).split(" ");
   const stringLink = String(link);
   return (
-    <Card className=" w-full lg:flex border-2 rounded-xl overflow-hidden h-full">
-      <Image
-        src={img}
-        alt={`pic ${title}`}
-        width={700}
-        height={600}
-        className=" h-48 lg:h-auto lg:w-60 flex-none object-cover
+    <Card className="rounded-xl overflow-hidden min-h-[380px] hover:border-secondary-foreground hover:border  ">
+      <a href={"https://github.com/ahmedmannai10"} target="_blank">
+        <div className="relative h-48">
+          <Image
+            src={img}
+            alt={`pic ${title}`}
+            fill
+            className=" h-48  lg:h-auto  flex-none object-cover
         rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-      />
-      <CardHeader>
-        <CardTitle>
-          <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
-            {title}
-          </h4>
-        </CardTitle>
+          />
+        </div>
 
-        <p class=" leading-7 [&:not(:first-child)]:mt-6">{desc}</p>
-      </CardHeader>
+        <div className=" ">
+          <CardHeader>
+            <CardTitle>
+              <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+                {title}
+              </h4>
+            </CardTitle>
+
+            <p class=" leading-7 [&:not(:first-child)]:mt-6">{desc}</p>
+          </CardHeader>
+          <CardContent>
+            <Badge variant="secondary">React JS</Badge>
+          </CardContent>
+        </div>
+      </a>
     </Card>
   );
 }

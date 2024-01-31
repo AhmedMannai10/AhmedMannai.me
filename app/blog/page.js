@@ -46,8 +46,8 @@ export default async function Page() {
   return (
     <main>
       <div
-        className="space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 dark:border-b-gray-700
-          border-b-gray-400 py-8"
+        className="space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 
+           py-8"
       >
         <h1
           className="dark:text-dark_h_color text-h_color font-bold
@@ -57,13 +57,11 @@ export default async function Page() {
           Blog
         </h1>
 
-        <h3 className="dark:text-gray-300 text-gray-600 text-xl">
-          My latest articles
-        </h3>
+        <h3 className=" text-xl">My latest articles</h3>
       </div>
 
       <div className="flex flex-col gap-10 items-center pt-5 min-h-screen">
-        <div className="flex flex-col gap-10 md:grid md:grid-cols-2 ">
+        <div className="flex flex-col gap-10 sm:grid sm:grid-cols-2 lg:grid-cols-3 ">
           {articles ? (
             articles.map((article) => (
               <BlogCard

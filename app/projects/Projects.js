@@ -1,10 +1,9 @@
-'use client'
-import react from 'react'
-import useSWR from 'swr';
-import SkeletonLoadingCard from '../../components/SkeletonLoadingCard';
-import ProjectCard from '../../components/ProjectCard';
-import fetcher from '../../utils/fetcher';
-
+"use client";
+import react from "react";
+import useSWR from "swr";
+import SkeletonLoadingCard from "../../components/SkeletonLoadingCard";
+import ProjectCard from "../../components/ProjectCard";
+import fetcher from "../../utils/fetcher";
 
 export default function Projects() {
   const { data, error, isLoading } = useSWR("/api/projects", fetcher);
@@ -32,4 +31,3 @@ export default function Projects() {
     </>
   );
 }
-
