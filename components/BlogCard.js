@@ -1,14 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Card,
-  CardHeader,
-  CardDescription,
-  CardContent,
-  CardTitle,
-  CardFooter,
-} from "@/components/ui/card";
+
 import { Button } from "@/components/ui/button";
 
 export default function BlogCard({ img, title, desc, link }) {

@@ -86,9 +86,7 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             <Header />
-            <main className="flex-1">
-              <div className="container relative ">{children}</div>
-            </main>
+            <main className="flex-1">{children}</main>
             <Footer />
           </ThemeProvider>
         </AuthProvider>

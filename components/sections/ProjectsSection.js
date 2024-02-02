@@ -27,7 +27,7 @@ export default function ProjectsSection({ params }) {
   return (
     <section
       className="flex flex-col 
-    lg:mx-auto  max-w-[980px]  items-center gap-6 pt-8 mx-8  "
+    lg:mx-auto  max-w-[980px]  items-center gap-6 pt-8 mx-8 mb-10 "
     >
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         Projects
@@ -39,17 +39,31 @@ export default function ProjectsSection({ params }) {
         className="w-full lg:max-w-4xl "
       >
         <CarouselContent className="">
-          {projects?.slice(0, 3).map((project) => (
-            <CarouselItem key={project.slug} className="   md:basis-1/2">
-              <ProjectCard
-                img={project.img}
-                title={project.title}
-                desc={project.description}
-                key={project.slug}
-                link={project.slug}
-              />
-            </CarouselItem>
-          ))}
+          {projects ? (
+            projects.slice(0, 3).map((project) => (
+              <CarouselItem key={project.slug} className="   md:basis-1/2">
+                <ProjectCard
+                  img={project.img}
+                  title={project.title}
+                  desc={project.description}
+                  key={project.slug}
+                  link={project.slug}
+                />
+              </CarouselItem>
+            ))
+          ) : (
+            <>
+              <CarouselItem className=" md:basis-1/2">
+                <SkeletonLoadingCard />
+              </CarouselItem>
+              <CarouselItem className=" md:basis-1/2">
+                <SkeletonLoadingCard />
+              </CarouselItem>
+              <CarouselItem className=" md:basis-1/2">
+                <SkeletonLoadingCard />
+              </CarouselItem>
+            </>
+          )}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

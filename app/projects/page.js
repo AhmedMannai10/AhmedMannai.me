@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Page({ fallback }) {
   return (
-    <main className="">
+    <main className="container relative">
       <div
         className="space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 
            py-8 "

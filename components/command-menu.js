@@ -127,6 +127,16 @@ export default function CommandMenu() {
                 Twitter
               </a>
             </CommandItem>
+
+            <CommandItem>
+              <a
+                href="https://youtube.com/channel/UCxEV3lsbWdN2S6gR-eV7Iqg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube
+              </a>
+            </CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>

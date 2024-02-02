@@ -11,7 +11,7 @@ export default function MainNav({ className, ...props }) {
     >
       <Link
         href="/"
-        className=" mr-6 text-lg transition-colors hover:text-primary hidden font-bold sm:inline-block"
+        className=" mr-4 text-lg transition-colors hover:text-primary hidden font-bold sm:inline-block"
       >
         Ahmed Mannai
       </Link>

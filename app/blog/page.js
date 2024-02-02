@@ -44,9 +44,9 @@ export default async function Page() {
   const articles = posts;
 
   return (
-    <main>
+    <main className="container relative">
       <div
-        className="space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 
+        className="space-y-2 pb-8 pt-6 md:space-y-5 border-b-2 px-1
            py-8"
       >
         <h1

@@ -77,7 +77,7 @@ function PostForm({ defaultValues, postRef, preview }) {
       <form className="" onSubmit={handleSubmit(updatePost)}>
         {preview && (
           <div>
-            <div className="w-full max-w-none mb-4 border flex-1 border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 prose dark:prose-invert p-4 ">
+            <div className="w-full max-w-none mb-4 border flex-1  rounded-lg   p-4 ">
               <ReactMarkdown>{watch("content")}</ReactMarkdown>
             </div>
           </div>
@@ -85,12 +85,12 @@ function PostForm({ defaultValues, postRef, preview }) {
         <div className={preview ? "hidden" : ""}>
           <ImageUploader />
 
-          <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 ">
-            <div className="flex items-center justify-between  px-3 py-2 border-b dark:border-gray-600">
+          <div className="w-full mb-4 border  rounded-lg  ">
+            <div className="flex items-center justify-between  px-3 py-2 border-b ">
               <button
                 type="button"
                 data-tooltip-target="tooltip-fullscreen"
-                className="p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
+                className="p-2  rounded cursor-pointer sm:ml-auto hover:text-gray-900  dark:hover:text-white "
               >
                 <svg
                   aria-hidden="true"
@@ -121,7 +121,7 @@ function PostForm({ defaultValues, postRef, preview }) {
               <input
                 name="description"
                 {...register("description")}
-                class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="# post description"
                 required
               />
@@ -131,7 +131,7 @@ function PostForm({ defaultValues, postRef, preview }) {
               <input
                 name="thumnailURL"
                 {...register("img")}
-                class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                class="shadow-sm bg-white  text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="# thumbnail URL"
               />
             </div>

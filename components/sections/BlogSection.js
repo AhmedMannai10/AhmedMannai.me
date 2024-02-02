@@ -15,10 +15,10 @@ export default function BlogSection() {
   return (
     <div
       className="flex flex-col
-            items-center gap-6 justify-center"
+            items-center gap-6 justify-center mb-10"
     >
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-        Featured Blog Posts
+        Blog Posts
       </h2>
       <div
         className="grid gap-10
@@ -38,6 +38,7 @@ export default function BlogSection() {
           })
         ) : (
           <>
+            <SkeletonLoadingCard />
             <SkeletonLoadingCard />
             <SkeletonLoadingCard />
           </>
