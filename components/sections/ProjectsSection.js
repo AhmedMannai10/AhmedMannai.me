@@ -46,8 +46,9 @@ export default function ProjectsSection({ params }) {
                   img={project.img}
                   title={project.title}
                   desc={project.description}
+                  tags={project.tags}
                   key={project.slug}
-                  link={project.slug}
+                  link={project.link}
                 />
               </CarouselItem>
             ))

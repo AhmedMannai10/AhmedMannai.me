@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
-import {
-  LinkedinShareButton,
-  XShareButton,
-  TwitterShareButton,
-} from "react-share";
+import { LinkedinShareButton, TwitterShareButton } from "react-share";
 
 export default function SharePost({ url, title, desc }) {
   return (
-    <div className="text-sm  flex flex-wrap flex-col mt-6 lg:mt-0 sm:flex-row lg:flex-col items-center justify-center gap-4">
-      <h3 className="font-medium pb-1 my-0 uppercase  flex justify-center">
+    <div className=" text-sm dark:text-white text-black  flex flex-wrap flex-col mt-6 lg:mt-0 sm:flex-row lg:flex-col items-center justify-center gap-4">
+      <h3 className=" pb-1 my-0 uppercase flex justify-center dark:text-zinc-50 text-black">
         Share with others
       </h3>
       <div className="m-0 flex items-center justify-center gap-4">

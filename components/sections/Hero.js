@@ -49,7 +49,7 @@ const Hero = () => {
           >
             Connect
           </Link>
-          <Link href="/contact">
+          <Link href="/resume">
             <Button>Resume</Button>
           </Link>
         </div>

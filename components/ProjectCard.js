@@ -14,11 +14,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export default function ProjectCard({ img, title, desc, tags, link }) {
-  const tagItems = String(tags).split(" ");
   const stringLink = String(link);
   return (
     <Card className="rounded-xl overflow-hidden min-h-[380px] hover:border-secondary-foreground hover:border  ">
-      <a href={"https://github.com/ahmedmannai10"} target="_blank">
+      <a href={stringLink} target="_blank" rel="noreferrer">
         <div className="relative h-48">
           <Image
             src={img}
@@ -39,8 +38,10 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
 
             <p class=" leading-7 [&:not(:first-child)]:mt-6">{desc}</p>
           </CardHeader>
-          <CardContent>
-            <Badge variant="secondary">React JS</Badge>
+          <CardContent className="flex gap-2">
+            {tags?.map((tag, index) => {
+              return <Badge key={`${tag} ${index}`}>{tag}</Badge>;
+            })}
           </CardContent>
         </div>
       </a>

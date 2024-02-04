@@ -2,10 +2,10 @@ import React from "react";
 
 const ResumePage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 shadow-md rounded-md">
+    <div className="min-h-screen mt-3  flex items-center justify-center container relative">
+      <div className=" p-8 shadow-md rounded-md">
         <h1 className="text-4xl font-bold mb-4">Ahmed Mannai</h1>
-        <p className="text-gray-500 mb-8">Passionate Software Engineer</p>
+        <p className="mb-8">Passionate Software Engineer</p>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Experience</h2>
@@ -13,7 +13,7 @@ const ResumePage = () => {
             <h3 className="text-lg font-medium mb-2">
               Software Engineer Intern
             </h3>
-            <p className="text-gray-500 mb-1">
+            <p className=" mb-1">
               Altersis Performance | February 2023 – June 2023
             </p>
             <ul className="list-disc pl-6">
@@ -35,9 +35,7 @@ const ResumePage = () => {
             <h3 className="text-lg font-medium mb-2">
               Software Engineer Intern
             </h3>
-            <p className="text-gray-500 mb-1">
-              Accent | June 2022 – August 2022
-            </p>
+            <p className=" mb-1">Accent | June 2022 – August 2022</p>
             <ul className="list-disc pl-6">
               <li>
                 Developed a fully functional Flutter Desktop App for circuit
@@ -56,9 +54,7 @@ const ResumePage = () => {
             <h3 className="text-lg font-medium mb-2">
               Full Stack Personal Blog Website
             </h3>
-            <p className="text-gray-500 mb-1">
-              Self-Learning Project | NextJS ∗ Firebase
-            </p>
+            <p className=" mb-1">Self-Learning Project | NextJS ∗ Firebase</p>
             <p>
               Build a personal website for sharing projects and publishing blog
               posts (www.ahmedmannai.me).
@@ -68,7 +64,7 @@ const ResumePage = () => {
             <h3 className="text-lg font-medium mb-2">
               Earthquake Data Visualization Desktop App
             </h3>
-            <p className="text-gray-500 mb-1">Self-Learning Project | Java</p>
+            <p className=" mb-1">Self-Learning Project | Java</p>
             <p>
               Desktop app that gets data about earthquakes from NASA's API and
               visualizes them on an earth map.

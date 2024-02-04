@@ -59,30 +59,14 @@ function AboutMePage() {
                 </p>
               </section>
 
-              <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+              <h4 className="scroll-m-20 text-xl mb-4 font-semibold tracking-tight">
                 Languages and Tools
               </h4>
+
               <SkillsCarousel />
             </div>
           </div>
           <Separator className="my-3" />
-          <section>
-            <p>
-              My journey into the world of software engineering was ignited by a
-              genuine passion for crafting innovative solutions to complex
-              challenges. This passion has been the driving force behind my
-              academic achievements, hands-on project experiences, and
-              continuous pursuit of knowledge in this dynamic and ever-evolving
-              field. While I have developed a solid foundation in Java,
-              JavaScript, and C, my true strength lies in my ability to rapidly
-              learn, adapt, and apply new technologies to deliver impactful
-              solutions. This adaptability, coupled with my problem-solving
-              mindset and analytical capabilities, enables me to navigate
-              diverse projects, collaborate effectively with multidisciplinary
-              teams, and contribute meaningfully to the success of various
-              initiatives.
-            </p>
-          </section>
           <section>
             <p>
               During my second year, I honed my Java skills through university
