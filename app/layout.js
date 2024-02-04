@@ -1,14 +1,11 @@
 import { AuthProvider } from "../lib/adminAuth";
 import "./globals.css";
-import styles from "./globals.css";
 import Head from "next/head";
 import Script from "next/script";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Ubuntu, Inter } from "next/font/google";
-import myPic from "../assets/imgs/Ahmed_image_w.png";
-import coverPic from "../assets/imgs/ahmedmannai_cover_img.jpeg";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
