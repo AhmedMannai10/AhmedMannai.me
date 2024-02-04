@@ -21,7 +21,7 @@ const Hero = () => {
           text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]
           "
         >
-          Hello I'm{" "}
+          Hello I{"'"}m{" "}
           <span
             className=" text-transparent bg-clip-text 
             bg-gradient-to-r from-purple-600 to-pink-400"
@@ -35,7 +35,7 @@ const Hero = () => {
           data-brr="1"
         >
           A dedicated software engineer with a passion for turning ideas into
-          elegant code. Let's build something extraordinary together. 🚀
+          elegant code. Let{"'"}s build something extraordinary together. 🚀
         </span>
         <div className=" mt-4 flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
           <Link

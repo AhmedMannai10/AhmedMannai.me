@@ -64,7 +64,7 @@ export default function MobileNav() {
         <SheetHeader>
           <SheetTitle>Ahmed Mannai</SheetTitle>
           <SheetDescription>
-            Have fun here, and don't forget to follow me on social media!
+            Have fun here, and {"don't"} forget to follow me on social media!
           </SheetDescription>
         </SheetHeader>
 

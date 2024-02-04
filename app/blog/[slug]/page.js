@@ -1,5 +1,4 @@
 import React from "react";
-import BlogImage from "@/components/blog-img";
 
 import PostTitle from "../../../components/PostTitle";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -12,8 +11,6 @@ import {
   query,
 } from "firebase/firestore";
 import SharePost from "../../../components/SharePost";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 async function getData(slug) {
   const postRef = doc(firestore, "blog-posts", slug);
@@ -81,12 +78,7 @@ export default async function ArticlePage({ params }) {
               className="w-full max-w-none mb-4  flex-1  rounded-lg  p-4  
                 lg:max-w-3xl lg:mx-auto overflow-auto content prose lg:prose-xl dark:prose-invert"
             >
-              <ReactMarkdown
-                escapeHtml={false}
-                renderers={{ image: BlogImage }}
-              >
-                {post.content}
-              </ReactMarkdown>
+              <ReactMarkdown escapeHtml={false}>{post.content}</ReactMarkdown>
             </article>
             <aside className="pt-2 lg:pt-10 top-14  lg:sticky lg:h-full w-full lg:w-56">
               <div className="hidden lg:block ">

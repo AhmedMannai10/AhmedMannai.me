@@ -66,8 +66,8 @@ const ResumePage = () => {
             </h3>
             <p className=" mb-1">Self-Learning Project | Java</p>
             <p>
-              Desktop app that gets data about earthquakes from NASA's API and
-              visualizes them on an earth map.
+              Desktop app that gets data about earthquakes from {"NASA's"} API
+              and visualizes them on an earth map.
             </p>
           </div>
         </section>

@@ -88,7 +88,7 @@ function AboutMePage() {
             <p>
               InfluxDB integration facilitated early issue detection,
               contributing to enhanced front-end reliability. The impact of this
-              tool wasn't just in lines of code but in enabling a culture of
+              tool {"wasn't"} just in lines of code but in enabling a culture of
               continuous improvement, where performance issues were identified
               and resolved seamlessly during the development cycle.
             </p>
@@ -98,9 +98,9 @@ function AboutMePage() {
               Looking Forward
             </h2>
             <p>
-              I'm excited about the intersection of creativity, problem-solving,
-              and technology. Eager to contribute my skills and enthusiasm to
-              future projects and challenges.
+              I am excited about the intersection of creativity,
+              problem-solving, and technology. Eager to contribute my skills and
+              enthusiasm to future projects and challenges.
             </p>
           </section>{" "}
           <section>
@@ -131,10 +131,10 @@ function AboutMePage() {
                 <li>
                   Automated calibration processes within the app, ensuring
                   optimal connectivity and synchronization with the circuit
-                  board's COMS for enhanced performance and reliability.
+                  {"board's"} COMS for enhanced performance and reliability.
                 </li>
                 <li>
-                  Designed a user-centric interface utilizing Flutter's
+                  Designed a user-centric interface utilizing {"Flutter's"}
                   capabilities, facilitating intuitive interactions and
                   streamlined communication with connected circuit boards.
                 </li>

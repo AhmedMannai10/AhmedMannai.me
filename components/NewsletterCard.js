@@ -47,7 +47,8 @@ export default function NewsletterCard() {
       <CardHeader>
         <CardTitle>Subscribe to our newsletter</CardTitle>
         <CardDescription>
-          Stay up to date with what I'm working on and get notified when I post.
+          Stay up to date with what I{"'"}m working on and get notified when I
+          post.
         </CardDescription>
       </CardHeader>
       <CardContent>
