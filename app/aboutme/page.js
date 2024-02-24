@@ -1,10 +1,12 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
 import mypic from "@/assets/imgs/Ahmed_image_w.png";
 import { SkillsCarousel } from "@/components/skills-carousel";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 
 function AboutMePage() {
   return (
@@ -32,18 +34,19 @@ function AboutMePage() {
                 />
               </div>
             </div>
-            <div className="flex-1 ">
+            <div className="flex-1 flex flex-col gap-2 ">
+              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+                Hello I{"'"}m Ahmed Mannai
+              </h1>
               <section>
-                <p>
-                  In 2016, I ventured into the world of coding with Java,
-                  exploring Minecraft mods. The challenge and creative freedom
-                  hooked me, sparking a passion that eventually led me to pursue
-                  computer science after graduating high school in 2020.
+                <p className="leading-7 [<p>:not(:first-child)]:mt-6">
+                  A Software Engineer based in Tunisia, passionate about
+                  leveraging technology to create impactful solutions.{" "}
                 </p>
               </section>
-              <Separator className="my-3" />
-              <section>
-                <p>
+              <Separator />
+              <section className="">
+                <p className="leading-7 [<p>:not(:first-child)]:mt-6">
                   My journey into the world of software engineering was ignited
                   by a genuine passion for crafting innovative solutions to
                   complex challenges. This passion has been the driving force
@@ -60,7 +63,7 @@ function AboutMePage() {
                 </p>
               </section>
 
-              <h4 className="scroll-m-20 text-xl mb-4 font-semibold tracking-tight">
+              <h4 className="scroll-m-20 text-xl my-4 tracking-tight">
                 Languages and Tools
               </h4>
 
@@ -68,115 +71,51 @@ function AboutMePage() {
             </div>
           </div>
           <Separator className="my-3" />
-          <section>
-            <p>
-              During my second year, I honed my Java skills through university
-              competitions. An internship at Accent.tn introduced me to
-              real-world application development using Flutter. Creating a
-              desktop app to automate tasks for electrical engineers was a
-              pivotal moment, showcasing the power of building solutions that
-              are both creative and useful.
-            </p>
-            <p>
-              In my final year as a CS student, I had an enriching internship at
-              Altersis Performance. As a software engineer for five months, I
-              engineered a Front-End Performance Testing Tool for CI/CD
-              integration using Java Selenium. This tool empowered teams with
-              real-time monitoring, data-driven insights, and the ability to
-              proactively identify and address UI-related performance issues.
-            </p>
-            <p>
-              InfluxDB integration facilitated early issue detection,
-              contributing to enhanced front-end reliability. The impact of this
-              tool {"wasn't"} just in lines of code but in enabling a culture of
-              continuous improvement, where performance issues were identified
-              and resolved seamlessly during the development cycle.
-            </p>
-          </section>
-          <section>
+          <section className="flex flex-col gap-2">
             <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-              Looking Forward
-            </h2>
-            <p>
-              I am excited about the intersection of creativity,
-              problem-solving, and technology. Eager to contribute my skills and
-              enthusiasm to future projects and challenges.
-            </p>
-          </section>{" "}
-          <section>
-            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-              Professional Experiences
+              🚀 Professional Background
             </h2>
 
-            <article>
-              <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                Software Engineer Intern
-              </h3>
-              <p>
-                <a
-                  href="https://accent.tn/#/home"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <strong classname="text-lg font-semibold">Accent</strong>
-                </a>
-              </p>
-              <p>Jun 2022 – Sep 2022 (4 mos)</p>
-              <ul>
-                <li>
-                  Engineered a fully functional Flutter Desktop App, enabling
-                  seamless communication with circuit boards through a serial
-                  port for efficient data exchange.
-                </li>
-                <li>
-                  Automated calibration processes within the app, ensuring
-                  optimal connectivity and synchronization with the circuit
-                  {"board's"} COMS for enhanced performance and reliability.
-                </li>
-                <li>
-                  Designed a user-centric interface utilizing {"Flutter's"}
-                  capabilities, facilitating intuitive interactions and
-                  streamlined communication with connected circuit boards.
-                </li>
-              </ul>
-              <p>...</p>
-            </article>
+            <p className="leading-7 [<p>:not(:first-child)]:mt-6">
+              In my professional journey, I{"'"}ve specialized in crafting
+              solutions with Java, JavaScript, and C. From developing front-end
+              performance testing tools to building comprehensive Flutter
+              applications, I thrive on turning innovative ideas into tangible,
+              user-centric products.
+            </p>
 
-            <article>
-              <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                Software Engineer Intern
-              </h3>
-              <p>
-                <a
-                  href="https://www.altersis-performance.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <strong classname="text-lg font-semibold">
-                    Altersis Performance by Qim info
-                  </strong>
-                </a>
-              </p>
-              <p>Feb 2023 – Jun 2023 (5 mos)</p>
-              <ul>
-                <li>
-                  Developed a specialized Java-based tool focused on front-end
-                  performance testing, seamlessly integrable into CI/CD
-                  pipelines for continuous evaluation.
-                </li>
-                <li>
-                  Enabled real-time monitoring of front-end performance metrics
-                  on every commit, leveraging Selenium to meticulously capture
-                  and analyze user interface responsiveness and efficiency.
-                </li>
-                <li>
-                  Implemented InfluxDB integration to store and analyze
-                  front-end performance data, facilitating the early detection
-                  of UI-related bottlenecks or responsiveness issues.
-                </li>
-              </ul>
-              <p>...</p>
-            </article>
+            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+              💡 Continuous Learning
+            </h2>
+
+            <p className="leading-7 [<p>:not(:first-child)]:mt-6">
+              Beyond coding, I am an avid learner, always eager to explore
+              emerging technologies and refine my skills. Whether it is staying
+              up-to-date with the latest tech trends, contributing to personal
+              projects, or engaging in collaborative endeavors, I believe in the
+              power of continuous improvement.
+            </p>
+
+            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+              🌐 Let us Connect
+            </h2>
+
+            <p className="leading-7 [<p>:not(:first-child)]:mt-6">
+              If you are a fellow enthusiast in the tech world or someone
+              interested in collaboration, let us connect! I am open to new
+              opportunities, creative discussions, and building something
+              extraordinary together.
+            </p>
+
+            <p className="leading-7 [<p>:not(:first-child)]:mt-6">
+              Feel free to reach out{" "}
+              <Badge variant={"outline"}>
+                <Link href="/contact" className="underline">
+                  HERE
+                </Link>
+              </Badge>
+              . Thanks for visiting!
+            </p>
           </section>
         </div>
       </div>

@@ -60,6 +60,7 @@ const Hero = () => {
           src={ahmedpic5}
           alt="Ahmed Mannai picture"
           layout="cover"
+          loading="lazy"
         />
 
         <Image

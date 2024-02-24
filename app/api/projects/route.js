@@ -8,7 +8,7 @@ import {
 } from "firebase/firestore";
 import { firestore, postToJson } from "../../../lib/firebase";
 
-const LIMIT = 3;
+const LIMIT = 5;
 
 export async function GET(request) {
   try {

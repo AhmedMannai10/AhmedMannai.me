@@ -40,8 +40,8 @@ export default function ProjectsSection({ params }) {
       >
         <CarouselContent className="">
           {projects ? (
-            projects.slice(0, 3).map((project) => (
-              <CarouselItem key={project.slug} className="   md:basis-1/2">
+            projects.slice(0, 10).map((project) => (
+              <CarouselItem key={project.slug} className="md:basis-1/2">
                 <ProjectCard
                   img={project.img}
                   title={project.title}

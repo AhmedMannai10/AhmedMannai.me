@@ -18,12 +18,13 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
   return (
     <Card className="rounded-xl overflow-hidden min-h-[380px] hover:border-secondary-foreground hover:border  ">
       <a href={stringLink} target="_blank" rel="noreferrer">
-        <div className="relative h-48">
+        <div className="relative h-60">
           <Image
             src={img}
             alt={`pic ${title}`}
+            loading="lazy"
             fill
-            className=" h-48  lg:h-auto  flex-none object-cover
+            className=" h-52  lg:h-auto  flex-none object-cover
         rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
           />
         </div>
@@ -38,7 +39,7 @@ export default function ProjectCard({ img, title, desc, tags, link }) {
 
             <p class=" leading-7 [&:not(:first-child)]:mt-6">{desc}</p>
           </CardHeader>
-          <CardContent className="flex gap-2">
+          <CardContent className="flex flex-wrap gap-2">
             {tags?.map((tag, index) => {
               return <Badge key={`${tag} ${index}`}>{tag}</Badge>;
             })}

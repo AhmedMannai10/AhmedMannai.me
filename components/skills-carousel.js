@@ -39,7 +39,7 @@ const skills = [
     alt: "springboot",
   },
   {
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg",
+    img: "https://nestjs.com/logo-small.ede75a6b.svg",
     alt: "nestjs",
   },
 
@@ -63,7 +63,7 @@ const skills = [
 
 export function SkillsCarousel() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 1000, stopOnInteraction: false })
   );
 
   return (
