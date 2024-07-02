@@ -12,9 +12,26 @@ import { React } from "react";
 import SkeletonLoadingCard from "@/components/SkeletonLoadingCard.js";
 
 export const metadata = {
-  title: "Blog",
+  title: "Blog | Software Engineering Insights and Tutorials",
   description:
-    "My latest articles, talking about what I am working on, and documenting my journey",
+    "Explore insightful articles and tutorials on software engineering, coding, and building interesting projects. Stay updated with the latest trends and best practices in the tech world.",
+  openGraph: {
+    title: "Blog | Software Engineering Insights and Tutorials",
+    description:
+      "Explore insightful articles and tutorials on software engineering, coding, and building interesting projects. Stay updated with the latest trends and best practices in the tech world.",
+    url: "https://ahmedmannai.me/blog",
+    siteName: "Coding Blog - Ahmed Mannai",
+    images: [
+      {
+        url: "https://firebasestorage.googleapis.com/v0/b/ahmed-mannai.appspot.com/o/uploads%2F1675363540779.jpeg?alt=media&token=56790d52-2d1b-42d4-a39a-99c89c661b07",
+        width: 1200,
+        height: 630,
+        alt: "Preview Image for Ahmed Mannai website",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const LIMIT = 6;

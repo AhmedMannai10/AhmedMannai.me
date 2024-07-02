@@ -41,13 +41,14 @@ export async function generateMetadata({ params }) {
       url: "./",
       images: [
         {
-          width: 700,
+          width: 1200,
           height: 630,
           type: "image/png",
           url: post.img,
         },
       ],
-
+      locale: "en_US",
+      type: "website",
       authors: "Ahmed Mannai",
     },
   };
