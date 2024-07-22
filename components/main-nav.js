@@ -1,4 +1,4 @@
-"use client";
+"uce client";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -11,7 +11,7 @@ export default function MainNav({ className, ...props }) {
     >
       <Link
         href="/"
-        className=" mr-4 text-lg transition-colors hover:text-primary hidden font-bold sm:inline-block"
+        className=" mr-6 text-lg transition-colors hover:text-primary hidden font-bold sm:inline-block"
       >
         Ahmed Mannai
       </Link>
@@ -34,7 +34,7 @@ export default function MainNav({ className, ...props }) {
         About Me
       </Link>
       <Link
-        href="/contact"
+        href="/hireme"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Contact
